@@ -1,43 +1,40 @@
 # Copilot Instructions for This Repository
 
-This repository is a GitHub template for FAIR and open research data projects. When GitHub Copilot or another coding agent works here, it should optimize for the smallest safe change that keeps the template reusable.
+This repository holds the course website for **All Data Are Local: Introduction to Data Literacy**. The full contract is in [AGENTS.md](../AGENTS.md). Read it first. This file repeats only the points that agents get wrong most often.
 
-## 1. Determine the context first
+## 1. Preview, do not render
 
-- **Template maintenance**: preserve placeholders such as `USERNAME`, `REPO_NAME`, `FULLNAME`, `SHORT_DESCRIPTION`, `GITHUB_REPO_ID`, `ZENODO_RECORD`, `DOI`, `[INSERT CONTACT METHOD]`, and intentional `TODO:` markers in template files like `CITATION.template.cff`, `CODE_OF_CONDUCT.template.md`, `SECURITY.template.md`, `README.template.md`, and `project-management/*.template.md`.
-- **Project instance**: replace those placeholders in the files listed in [TODO.md](../TODO.md), rename `CITATION.template.cff`, `CODE_OF_CONDUCT.template.md`, and `SECURITY.template.md` into place early, rename or delete any used `project-management/*.template.md` scaffolds, then rename `README.template.md` to `README.md` and `CHANGELOG.template.md` to `CHANGELOG.md` when the project is finalized.
+- Run `npm run preview` while you edit the documentation.
+- Do not run `quarto render` unless the maintainer asks for a production artifact.
+- GitHub Pages deploys through `.github/workflows/quarto-publish.yml` after a validated change lands on `main`.
 
-## 2. Prefer preview over production
+## 2. Do not invent course content
 
-- Run `npm run preview` while iterating on docs.
-- Do **not** run `quarto render` during an agent session unless a maintainer explicitly asks for release preparation or production publishing.
-- GitHub Pages deploys through `.github/workflows/quarto-publish.yml` after validated changes land on `main`; do not fall back to legacy manual Pages publishing guidance.
+The course pages in `contents/` come from source material that the instructor wrote.
 
-## 3. Follow the setup checklist
+- Do not invent a reading, a page number, a session output, or a learning outcome.
+- Keep the terms **data set**, **data setting**, and **local** fixed.
+- Ask the instructor before you change a date, a reading, or an assessment rule.
 
-- Use [TODO.md](../TODO.md) as the source of truth.
-- Work through items marked `[Agent]` directly.
-- Prepare, but do not complete on your own, items marked `[Shared]` or `[Manual]` unless the maintainer explicitly authorizes the external action.
-- When a maintainer authorizes GitHub repository settings changes, prefer reviewable `gh` CLI commands over browser-only instructions for branch protection, security alerts, Dependabot security updates, and Pages settings.
+## 3. This repository contains no R
 
-## 4. Use the existing validation tools
+Do not add an R toolchain, an `renv` lockfile, or an R lint step. The site builds with Node.js, uv, and Quarto.
+
+## 4. The cheat sheet builds its figures with Python
+
+`contents/cheat-sheet.qmd` uses static `{python}` cells that Quarto runs at build time. The front matter sets `echo: false`, so readers see figures and not code. Prefer a Mermaid diagram over a Python figure for a flow or a set of relations.
+
+## 5. Use the existing validation tools
 
 - `npm run format` and `npm run check`
 - `uv run ruff format` and `uv run ruff check`
 - `uv run ty check`
-- `styler::style_dir(".")` and `lintr::lint_dir(".")`
-- `npm run changelog`
-- `npm run release:prepare -- --tag vX.Y.Z` when preparing a Zenodo-friendly release snapshot
+- `npm run lychee-check`
 
-## 5. Manage the changelog from history
+## 6. Write Conventional Commits
 
-- Fetch the full history first when needed: `git fetch --tags --unshallow origin`
-- Use `git commit -m "type: subject"` so each logical change becomes a Commitlint-checked Conventional Commit that `git-cliff` can summarize cleanly
-- Use `npm run changelog:unreleased` while iterating to keep agent context small
-- Draft the full release notes with `npm run changelog`
-- For project instances, curate the generated entries into [CHANGELOG.template.md](../CHANGELOG.template.md) until it is renamed to `CHANGELOG.md`
+Use `git commit -m "type: subject"`. Commitlint enforces the subject through Prek. Make one focused change per commit.
 
-## 6. Keep docs and governance files consistent
+## 7. Keep the setup checklist current
 
-- Update related files together when changing setup or release guidance: `README.md`, `CHANGELOG.md`, `CITATION.cff`, `CITATION.template.cff`, `README.template.md`, `CHANGELOG.template.md`, `CODE_OF_CONDUCT.md`, `CODE_OF_CONDUCT.template.md`, `SECURITY.md`, `SECURITY.template.md`, `TODO.md`, `CONTRIBUTING.md`, documentation in `documentation/`, and scaffolds in `project-management/*.template.md`
-- Link new guidance back to this file when it helps humans and agents find the right workflow quickly
+[TODO.md](../TODO.md) lists the open setup tasks. Work through items marked `[Agent]` directly. Prepare, but do not complete, items marked `[Shared]` or `[Manual]` without authorization.
