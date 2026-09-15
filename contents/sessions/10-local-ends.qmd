@@ -1,0 +1,29 @@
+---
+title: 'Session 10 — Local ends'
+subtitle: 'Day 2 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Chapter 7, *Local Ends*, pp. 189–196
+- **Output:** Ethical and practical criteria
+:::
+
+## Reading
+
+Loukissas, Chapter 7, _Local Ends_, pp. 189–196.
+
+## Reading summary
+
+Loukissas returns to the main claim: we do not understand data if we do not understand their setting. He contrasts common goals of data work, such as orientation, access, analysis, and optimization, with local ends such as place making, restraint, reflexivity, and contestation. He also argues that open data need guides that explain data settings, not only files and technical documentation.
+
+## In class
+
+Students turn these ideas into ethical and practical criteria for their own work.
+
+## Output
+
+A set of ethical and practical criteria.
+
+## Next
+
+[Session 11 — Describe your dataset](11-describe-your-dataset.qmd) starts the final assignment.

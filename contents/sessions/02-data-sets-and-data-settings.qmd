@@ -1,0 +1,29 @@
+---
+title: 'Session 2 — Data sets and data settings'
+subtitle: 'Day 1 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Introduction, pp. 1–12
+- **Output:** Data Setting questions
+:::
+
+## Reading
+
+Loukissas, Introduction, pp. 1–12. Read it closely before the session.
+
+## Reading summary
+
+Loukissas argues that a dataset is not a complete and portable object. Data are made by people and machines at specific times and places, with specific tools and for specific audiences. He proposes that we study **data settings**, not only data sets. A data setting includes the conditions that make the data possible and meaningful.
+
+## In class
+
+Students turn this idea into a first set of questions for reading data critically.
+
+## Output
+
+A first set of Data Setting questions.
+
+## Next
+
+[Session 3 — Taking data apart](03-taking-data-apart.qmd) applies these questions to a simple table.

@@ -1,0 +1,40 @@
+---
+title: About
+subtitle: 'All Data Are Local: Introduction to Data Literacy'
+---
+
+This two-day block course is part of **PLAY 1 / Data Literacy** in Data Design + Art.
+
+Moritz Mähr teaches the course. Write to <moritz.maehr@gmail.com> with questions about the content.
+
+The course gives 12 hours of contact time, as two days of six sessions of 60 minutes. Day 1 runs on 5 October 2026 and Day 2 on 12 October 2026.
+
+The main text is Yanni Alexander Loukissas, _All Data Are Local_. The statistics resource is _Introduction to Modern Statistics (2e)_.
+
+## Teaching approach
+
+The course uses a flipped structure.
+
+**In class:** critical data literacy, close reading, discussion, application, and feedback.
+
+**Between the two days:** basic statistics and standard data displays through self-study.
+
+The course treats data as material for knowledge and design. It asks students to look behind a table or chart and study the conditions that produced it.
+
+## Scope
+
+This is not a complete statistics, programming, database, or data-law course. It provides a foundation for later work in data analysis, information design, visualization, coding, and data-based art.
+
+The central principle is:
+
+> To understand a dataset, we must also understand its setting.
+
+## Reuse
+
+The course content is available under [CC BY 4.0](/LICENSE-CCBY.md). You can copy it, change it, and teach it, if you give credit. The [reuse guide](../documentation/index.qmd) explains how to adapt the site for your own course.
+
+Cite the course as described in [CITATION.cff](https://github.com/maehr/all-data-are-local/blob/main/CITATION.cff).
+
+## Corrections
+
+Report a broken link, a wrong page number, or an unclear instruction through [GitHub Issues](https://github.com/maehr/all-data-are-local/issues).

@@ -1,0 +1,43 @@
+---
+title: Literature
+subtitle: Required and optional readings
+---
+
+## Core reading
+
+### Loukissas, Yanni Alexander. 2019. _All Data Are Local: Thinking Critically in a Data-Driven Society_. MIT Press.
+
+Open access: <https://direct.mit.edu/books/oa-monograph/4323/All-Data-Are-LocalThinking-Critically-in-a-Data>
+
+Read together in class:
+
+- **Introduction**, pp. 1–12 — [Session 2](sessions/02-data-sets-and-data-settings.qmd)
+- **Chapter 1, Local Origins**, pp. 13–26 — [Session 3](sessions/03-taking-data-apart.qmd) and [Session 4](sessions/04-what-does-local-mean.qmd)
+- **Chapter 2, A Place for Plant Data**, pp. 27–54 — [Session 5](sessions/05-a-place-for-plant-data.qmd) and [Session 6](sessions/06-from-world-to-table.qmd)
+- **Chapter 6, Models of Local Practice**, pp. 161–188 — [Session 8](sessions/08-models-of-local-practice-i.qmd) and [Session 9](sessions/09-models-of-local-practice-ii.qmd)
+- **Chapter 7, Local Ends**, pp. 189–196 — [Session 10](sessions/10-local-ends.qmd)
+
+Optional extensions:
+
+- Chapter 3, **Collecting Infrastructures**
+- Chapter 5, **Market, Place, Interface**
+
+### Çetinkaya-Rundel, Mine, and Johanna Hardin. _Introduction to Modern Statistics_. 2nd ed. OpenIntro.
+
+Online book: <https://openintrostat.github.io/ims/>
+
+Source files: <https://github.com/openintrostat/ims/>
+
+Required self-study sections:
+
+- 1.2.1–1.2.4
+- 2.1.1
+- 4.1
+- 5.1
+- 5.2 — focus on the mean
+- 5.3
+- 5.5
+
+The course uses the second edition, version dated 31 March 2026.
+
+The [assignments](assignments.qmd) page lists these sections with links into the [statistics cheat sheet](cheat-sheet.qmd).

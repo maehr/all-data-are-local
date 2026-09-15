@@ -3,21 +3,25 @@ project:
   render:
     - '*.qmd'
     - '*.md'
+    - 'contents/**/*.qmd'
+    - 'contents/**/*.md'
     - 'documentation/**/*.qmd'
     - 'documentation/**/*.md'
-    - 'project-management/**/*.qmd'
-    - 'project-management/**/*.md'
     - '!**/*.template.md'
     - '!**/*.template.qmd'
+    - '!AGENTS.md'
+    - '!CLAUDE.md'
+    - '!TODO.md'
+    - '!README.md'
 
 website:
-  title: REPO_NAME
+  title: All Data Are Local
   favicon: android-chrome-512x512.png
   open-graph: true
   twitter-card: true
-  site-url: https://USERNAME.github.io/REPO_NAME/
-  repo-url: https://github.com/USERNAME/REPO_NAME/
-  issue-url: https://github.com/USERNAME/REPO_NAME/issues/new/choose
+  site-url: https://maehr.github.io/all-data-are-local/
+  repo-url: https://github.com/maehr/all-data-are-local/
+  issue-url: https://github.com/maehr/all-data-are-local/issues/new/choose
   repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: true
@@ -27,36 +31,61 @@ website:
     type: overlay
   navbar:
     logo: android-chrome-512x512.png
-    logo-alt: ''
-    title: REPO_NAME
+    logo-alt: 'All Data Are Local'
+    title: All Data Are Local
     tools:
       - icon: github
-        url: https://github.com/USERNAME/REPO_NAME/
+        url: https://github.com/maehr/all-data-are-local/
     left:
-      - text: Home
-        href: index.qmd
-      - text: Documentation
-        href: documentation/index.qmd
+      - text: Course
+        href: contents/course-description.qmd
+      - text: Syllabus
+        href: contents/syllabus.qmd
+      - text: Assignments
+        href: contents/assignments.qmd
+      - text: Literature
+        href: contents/literature.qmd
+      - text: Resources
+        href: contents/resources.qmd
+      - text: About
+        href: contents/about.qmd
 
   sidebar:
+    collapse-level: 1
     contents:
-      - section: REPO_NAME
+      - text: Home
         href: index.qmd
+      - href: contents/course-description.qmd
+      - section: Syllabus
+        href: contents/syllabus.qmd
+        contents: contents/sessions/*
+      - href: contents/assignments.qmd
+      - href: contents/literature.qmd
+      - section: Resources
+        href: contents/resources.qmd
         contents:
+          - href: contents/cheat-sheet.qmd
+      - href: contents/about.qmd
+      - section: Project
+        contents:
+          - text: Reuse this course
+            href: documentation/index.qmd
           - text: Changelog
             href: CHANGELOG.md
           - text: Code of Conduct
             href: CODE_OF_CONDUCT.md
           - text: Contributing
             href: CONTRIBUTING.md
-          - text: License (Data)
+          - text: License (Content)
             href: LICENSE-CCBY.md
           - text: License (Code)
             href: LICENSE-AGPL.md
           - text: Security
             href: SECURITY.md
-      - text: Documentation
-        href: documentation/index.qmd
+
+  page-footer:
+    left: 'Content under [CC BY 4.0](/LICENSE-CCBY.md), code under [AGPL 3.0](/LICENSE-AGPL.md).'
+    right: 'Built with [Quarto](https://quarto.org/).'
 
 format:
   html:
@@ -68,6 +97,8 @@ format:
     code-copy: true
     code-overflow: wrap
     canonical-url: true
+    link-external-icon: true
+    link-external-newwindow: true
 
 freeze: true
 

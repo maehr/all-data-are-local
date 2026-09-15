@@ -1,0 +1,25 @@
+---
+title: 'Session 1 — What counts as data?'
+subtitle: 'Day 1 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Material:** Objects, traces, records, tables
+- **Output:** Working definition of data
+:::
+
+## Key question
+
+> When does something become data?
+
+## In class
+
+We start without a fixed definition. Students compare physical objects, notes, photographs, labels, measurements, maps, and table rows. The aim is to see that something becomes data through a practice of observation and use.
+
+## Output
+
+A working definition of data, written by the group.
+
+## Next
+
+[Session 2 — Data sets and data settings](02-data-sets-and-data-settings.qmd) turns this definition into a set of questions.

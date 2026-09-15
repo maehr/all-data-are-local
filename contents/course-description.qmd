@@ -1,0 +1,33 @@
+---
+title: Course Description
+subtitle: 'All Data Are Local: Introduction to Data Literacy'
+---
+
+This course introduces data literacy for Data Design + Art. It starts from a simple idea: data are not given. People make data through observation, selection, classification, measurement, storage, and design.
+
+The main text is Yanni Alexander Loukissas's _All Data Are Local_. We use the Introduction and Chapters 1 and 2 on Day 1. We use Chapters 6 and 7 on Day 2. The course asks three questions throughout:
+
+- What do we gain when we turn the world into data?
+- What do we lose?
+- Who makes these decisions?
+
+Between the two course days, students study selected sections of _Introduction to Modern Statistics (2e)_. These sections provide basic statistical language for observations, variables, samples, distributions, and common charts. Day 2 starts with a short multiple-choice quiz on this material.
+
+Students also bring their own dataset. They use it to connect statistical description with critical data practice.
+
+## Learning outcomes
+
+After the course, students can:
+
+- distinguish a **data set** from its **data setting**;
+- explain how observations and categories become data;
+- identify the origin, purpose, limits, and missing context of a dataset;
+- use basic statistical terms to describe a dataset;
+- explain how place, institutions, tools, and interfaces shape data;
+- describe a dataset in a clear, critical, and responsible way.
+
+## Next steps
+
+- Read the [syllabus](syllabus.qmd) for the session plan.
+- Read the [assignments](assignments.qmd) for the work between the two days.
+- Read the [literature](literature.qmd) for the required readings.

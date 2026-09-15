@@ -1,0 +1,70 @@
+---
+title: Syllabus
+subtitle: 12 sessions across two days
+---
+
+## Course format
+
+The course runs on two days, with six hours of teaching on each day. Each day holds six sessions of 60 minutes. We work with short input, close reading, discussion, exercises, peer feedback, and self-study.
+
+The core text is Yanni Alexander Loukissas, _All Data Are Local_. The statistics text is Mine Çetinkaya-Rundel and Johanna Hardin, _Introduction to Modern Statistics (2e)_.
+
+```{mermaid}
+flowchart LR
+    A["<b>Day 1</b><br/>Sessions 1 to 6<br/>How does the world<br/>become data?"] --> B["<b>Self-study</b><br/>Ten IMS sections<br/>Bring one dataset"]
+    B --> C["<b>Day 2</b><br/>Sessions 7 to 12<br/>How can we work with<br/>data critically?"]
+```
+
+## Day 1 — How does the world become data?
+
+**5 October 2026**
+
+1. **[What counts as data?](sessions/01-what-counts-as-data.qmd)** — We compare objects, traces, records, and tables, and write a working definition of data.
+2. **[Data sets and data settings](sessions/02-data-sets-and-data-settings.qmd)** — We read the Introduction and turn the idea of a data setting into a first set of questions.
+3. **[Taking data apart](sessions/03-taking-data-apart.qmd)** — We read Chapter 1 and take notes on how data are made.
+4. **[What does local mean?](sessions/04-what-does-local-mean.qmd)** — We read Chapter 1 again and build the Data Setting Checklist.
+5. **[A place for plant data](sessions/05-a-place-for-plant-data.qmd)** — We read Chapter 2 and map the relations between data and place.
+6. **[From world to table](sessions/06-from-world-to-table.qmd)** — We read Chapter 2 again and make a small dataset of our own.
+
+## Work after Day 1
+
+Complete two tasks before Day 2.
+
+1. Read the required sections of _Introduction to Modern Statistics (2e)_.
+2. Bring one dataset to Day 2.
+
+The [assignments](assignments.qmd) page explains both tasks in full. Read these ten sections:
+
+- 1.2.1 Observations, variables, and data matrices
+- 1.2.2 Types of variables
+- 1.2.3 Relationships between variables
+- 1.2.4 Explanatory and response variables
+- 2.1.1 Populations and samples
+- 4.1 Contingency tables and bar plots
+- 5.1 Scatterplots for paired data
+- 5.2 Dot plots and the mean — focus on the mean
+- 5.3 Histograms and shape
+- 5.5 Box plots, quartiles, and the median
+
+Use the [statistics cheat sheet](cheat-sheet.qmd) while you read.
+
+## Day 2 — How can we work with data critically?
+
+**12 October 2026**
+
+7. **[Statistics knowledge check](sessions/07-statistics-knowledge-check.qmd)** — We write the quiz, correct it together, and connect it to Day 1.
+8. **[Models of local practice I](sessions/08-models-of-local-practice-i.qmd)** — We read Chapter 6 and draw design principles from its examples.
+9. **[Models of local practice II](sessions/09-models-of-local-practice-ii.qmd)** — We apply those principles to the dataset each student brought.
+10. **[Local ends](sessions/10-local-ends.qmd)** — We read Chapter 7 and write ethical and practical criteria.
+11. **[Describe your dataset](sessions/11-describe-your-dataset.qmd)** — Each student drafts a description of their own dataset.
+12. **[Review and synthesis](sessions/12-review-and-synthesis.qmd)** — We exchange feedback and build a shared Critical Data Practice Checklist.
+
+## Assessment and participation
+
+The course uses three forms of evidence of learning:
+
+- active work in close reading and discussion;
+- a short multiple-choice quiz at the start of Day 2;
+- a written description of the student's own dataset after Day 2.
+
+The quiz checks concepts, not complex calculations.

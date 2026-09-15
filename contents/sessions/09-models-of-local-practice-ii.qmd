@@ -1,0 +1,38 @@
+---
+title: 'Session 9 — Models of local practice II'
+subtitle: 'Day 2 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Chapter 6, *Models of Local Practice*, pp. 161–188
+- **Output:** Application to own dataset
+:::
+
+## Reading
+
+Loukissas, Chapter 6, _Models of Local Practice_, pp. 161–188. [Session 8](08-models-of-local-practice-i.qmd) reads the same chapter from a different angle.
+
+## Reading summary
+
+The chapter proposes six practical moves:
+
+1. Look at the data setting.
+2. Make place part of data presentation.
+3. Compare data instead of treating them as uniform.
+4. Challenge normative algorithms with counterdata.
+5. Create interfaces that introduce useful friction.
+6. Use data to build relationships.
+
+Design can support critical reflection by making hidden attachments, values, absences, and biases easier to inspect.
+
+## In class
+
+Students apply at least two of these moves to the dataset they brought to class.
+
+## Output
+
+A written application of at least two moves to your own dataset.
+
+## Next
+
+[Session 10 — Local ends](10-local-ends.qmd) closes the core text.

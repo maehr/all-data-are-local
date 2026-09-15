@@ -1,0 +1,25 @@
+---
+title: 'Session 12 — Review and synthesis'
+subtitle: 'Day 2 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Material:** All course material
+- **Output:** Critical Data Practice checklist
+:::
+
+## In class
+
+Students exchange dataset descriptions and give peer feedback. We finish by creating a shared **Critical Data Practice Checklist**.
+
+## Output
+
+The shared Critical Data Practice Checklist.
+
+::: {.callout-tip title="The final test for a dataset"}
+Do we know what it contains, how it was made, what it leaves out, and what we can responsibly do with it?
+:::
+
+## After Day 2
+
+Write a concise description of the dataset you brought to class. The [assignments](../assignments.qmd) page lists the eight questions that your text must answer.

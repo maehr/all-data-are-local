@@ -1,0 +1,29 @@
+---
+title: 'Session 5 — A place for plant data'
+subtitle: 'Day 1 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Chapter 2, *A Place for Plant Data*, pp. 27–54
+- **Output:** Map of data-place relations
+:::
+
+## Reading
+
+Loukissas, Chapter 2, _A Place for Plant Data_, pp. 27–54. [Session 6](06-from-world-to-table.qmd) reads the same chapter from a different angle.
+
+## Reading summary
+
+Loukissas uses the Arnold Arboretum to show that data have complex attachments to place. Plant records are tied to living specimens, tags, collecting histories, institutional practices, maps, catalogues, and databases. Data can be **about**, **in**, and **from** a place. These relations shape how the records can be interpreted.
+
+## In class
+
+Students trace the relations between plant, place, label, record, database, and visualization.
+
+## Output
+
+A map of data-place relations.
+
+## Next
+
+[Session 6 — From world to table](06-from-world-to-table.qmd) continues with the same chapter.
