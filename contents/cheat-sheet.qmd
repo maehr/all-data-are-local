@@ -1,0 +1,1111 @@
+---
+title: Statistics Cheat Sheet
+subtitle: 'Data, distributions, and visual interpretation · Data Design + Art'
+toc-depth: 2
+page-layout: full
+execute:
+  echo: false
+  warning: false
+---
+
+```{python}
+# Chart defaults for every figure on this page.
+import matplotlib.pyplot as plt
+import numpy as np
+
+ACCENT = "#2a78d6"
+SECOND = "#eb6834"
+FILL = "#cde2fb"
+INK = "#0b0b0b"
+MUTED = "#52514e"
+GRID = "#dcdbd6"
+
+plt.rcParams.update(
+    {
+        "figure.facecolor": "white",
+        "axes.facecolor": "white",
+        "axes.edgecolor": GRID,
+        "axes.labelcolor": MUTED,
+        "axes.titlesize": 11,
+        "axes.titlelocation": "left",
+        "axes.labelsize": 10,
+        "axes.spines.top": False,
+        "axes.spines.right": False,
+        "xtick.color": MUTED,
+        "ytick.color": MUTED,
+        "xtick.labelsize": 9,
+        "ytick.labelsize": 9,
+        "grid.color": GRID,
+        "grid.linewidth": 0.6,
+        "font.size": 10,
+        "lines.linewidth": 2,
+    }
+)
+```
+
+::: {.callout-tip title="The big idea"}
+**Start with the data, not the chart.**
+
+Before visualizing anything, ask:
+
+1. **What does one row represent?**
+2. **What variables do I have?**
+3. **What type is each variable?**
+4. **Am I describing one variable or a relationship?**
+5. **What population do I ultimately care about?**
+:::
+
+# 1. Data basics
+
+## Observations, variables, and data frames
+
+Most datasets can be imagined as a table:
+
+| artwork | medium | viewing_time | likes |
+|---|---|---:|---:|
+| A | print | 18.4 | 12 |
+| B | digital | 7.9 | 34 |
+| C | print | 12.1 | 19 |
+
+- **Observation / case / observational unit:** one thing being studied.
+  - Usually one **row**.
+  - Here: one artwork.
+- **Variable:** a characteristic measured for every observation.
+  - Usually one **column**.
+  - Here: `medium`, `viewing_time`, `likes`.
+- **Value:** the particular measurement in one cell.
+  - e.g. `18.4` seconds.
+
+A useful question is:
+
+> **What does one row mean?**
+
+If you cannot answer that clearly, you probably do not yet understand the dataset.
+
+### Tidy data
+
+A common structure is **tidy data**:
+
+- one row = one observation
+- one column = one variable
+- one cell = one value
+
+This structure makes data easier to summarize, visualize, and analyze.
+
+::: {.callout-warning title="Design-data trap"}
+A spreadsheet that *looks* neat to a human is not necessarily tidy data.
+
+For example, using separate columns for `Monday`, `Tuesday`, `Wednesday`, etc. may encode values in column names instead of storing **day** as a variable.
+:::
+
+---
+
+## Types of variables
+
+The most important split is:
+
+```{mermaid}
+flowchart TD
+    A["Variable"] --> B["Categorical"]
+    A --> C["Numerical"]
+    B --> D["Nominal<br/>no natural order"]
+    B --> E["Ordinal<br/>natural order"]
+    C --> F["Discrete<br/>countable values"]
+    C --> G["Continuous<br/>measured on a continuum"]
+```
+
+### Numerical variables
+
+Arithmetic on their values has meaningful interpretations.
+
+Examples:
+
+- viewing time
+- font size
+- age
+- screen width
+- number of visitors
+- number of clicks
+
+#### Discrete numerical
+
+Values come in distinct steps, often because they are **counts**.
+
+Examples:
+
+- 0, 1, 2, 3 clicks
+- number of exhibition visitors
+- number of colors used
+
+You cannot normally observe 3.72 visitors.
+
+#### Continuous numerical
+
+Can theoretically take any value within some interval.
+
+Examples:
+
+- reading time: 4.81 s
+- height: 172.3 cm
+- temperature
+- distance
+
+Measurements may be rounded, but the underlying quantity is continuous.
+
+### Categorical variables
+
+Values represent groups or labels.
+
+Examples:
+
+- medium: `print`, `digital`, `installation`
+- operating system
+- country
+- typeface family
+- yes/no
+
+::: {.callout-important title="Numbers are not automatically numerical data"}
+A student ID, postcode, telephone number, or room number may contain digits, but averaging them makes no sense.
+
+Ask:
+
+> **Does arithmetic on these values mean anything?**
+
+If not, treat the variable as categorical.
+:::
+
+### Nominal vs. ordinal
+
+**Nominal**
+
+Categories have no inherent ranking.
+
+`medium = print / web / installation`
+
+**Ordinal**
+
+Categories have a meaningful order.
+
+`satisfaction = poor / fair / good / excellent`
+
+But the *distance* between ordinal categories is not necessarily equal.
+
+`poor → fair`
+
+does not necessarily represent the same change as
+
+`good → excellent`.
+
+---
+
+## Relationships between variables
+
+Often the goal is not to describe one variable but to ask whether **two variables are related**.
+
+Design examples:
+
+- Does larger text correspond to shorter reading time?
+- Do visitors spend more time with larger artworks?
+- Is device type related to task completion?
+- Does color contrast correspond to higher click-through rates?
+
+Two variables are **associated** if values of one variable tend to correspond systematically with values of another.
+
+### Positive association
+
+As one variable increases, the other tends to increase.
+
+`screen size ↑  →  time watching video ↑`
+
+### Negative association
+
+As one increases, the other tends to decrease.
+
+`font size ↑  →  reading errors ↓`
+
+### No evident association
+
+Knowing one variable gives little information about the other.
+
+::: {.callout-warning title="Association ≠ causation"}
+A visible relationship does **not** automatically mean that one variable caused the other.
+
+There might be:
+
+- other variables involved;
+- selection effects;
+- common causes;
+- coincidence.
+
+A plot can show an **association**. Establishing causality requires an appropriate study design, typically an experiment.
+:::
+
+---
+
+## Explanatory and response variables
+
+When the research question suggests that one variable may explain or predict another:
+
+**Explanatory variable → Response variable**
+
+Example:
+
+> Does increasing line spacing improve reading speed?
+
+- **Explanatory:** line spacing
+- **Response:** reading speed
+
+In a scatterplot, the convention is usually:
+
+- explanatory variable → **x-axis**
+- response variable → **y-axis**
+
+But assigning these labels does **not** prove causality.
+
+# 2. Population and sample
+
+## Population
+
+The **population** is the complete group you ultimately want to understand.
+
+Example research question:
+
+> What is the average time visitors spend in this museum exhibition?
+
+Possible population:
+
+> All visitors to the exhibition during its entire run.
+
+## Sample
+
+The **sample** is the set of observations you actually collect.
+
+Example:
+
+> 180 visitors observed during four selected days.
+
+```{mermaid}
+flowchart TD
+    A["Target population"] -->|sampling| B["Sample"]
+    B -->|data analysis| C["Description of the sample"]
+    C -->|cautious inference| A
+```
+
+## Census
+
+A **census** measures every case in the population.
+
+This is often:
+
+- expensive;
+- slow;
+- impractical;
+- impossible.
+
+So we usually study a sample instead.
+
+::: {.callout-important title="The sample is not automatically the population"}
+Observing 100 art students does not automatically tell you about **all adults**.
+
+When reading a statistic, ask:
+
+> **Who was actually measured, and who is the conclusion supposed to describe?**
+:::
+
+---
+
+# 3. Categorical data: contingency tables & bar plots
+
+## Contingency table
+
+Use a **contingency table** to summarize **two categorical variables**.
+
+Example: device type and task completion.
+
+| | Completed | Not completed | Total |
+|---|---:|---:|---:|
+| Mobile | 42 | 18 | 60 |
+| Desktop | 32 | 8 | 40 |
+| **Total** | **74** | **26** | **100** |
+
+Each inner cell describes one **combination** of categories.
+
+For example:
+
+> 18 mobile users did not complete the task.
+
+The final row and column are **marginal totals**.
+
+### What to look for
+
+Ask whether the distribution of one variable changes depending on the other.
+
+For example:
+
+> Is task completion distributed similarly for mobile and desktop users?
+
+A contingency table gives the raw material for studying relationships between categorical variables.
+
+---
+
+## Bar plot
+
+Use a bar plot for a **categorical variable**.
+
+Bar height can represent:
+
+- **count**, or
+- **proportion / percentage**.
+
+Example:
+
+```{python}
+media = ["Digital", "Print", "Installation"]
+share = [45, 31, 24]
+
+fig, ax = plt.subplots(figsize=(6, 3))
+bars = ax.bar(media, share, color=ACCENT, width=0.6)
+ax.bar_label(bars, fmt="%d%%", padding=3, color=INK, fontsize=9)
+ax.set_ylim(0, 50)
+ax.set_ylabel("Share of visitors (%)")
+ax.set_title("Preferred medium")
+ax.yaxis.grid(True)
+ax.set_axisbelow(True)
+ax.spines["left"].set_visible(False)
+ax.tick_params(left=False)
+fig.tight_layout()
+plt.show()
+```
+
+### Good bar-chart practice
+
+- Start the quantitative axis at zero when bar **length** represents magnitude.
+- Label categories clearly.
+- Sort intentionally:
+  - natural order;
+  - ascending/descending value;
+  - meaningful conceptual order.
+- Avoid decoration that competes with comparison.
+- Use counts when the absolute number matters.
+- Use proportions when the share of observations matters.
+
+# 4. Scatterplots for paired data
+
+Use a **scatterplot** when you have **two numerical variables measured on the same observations**.
+
+Each point = one case.
+
+Example:
+
+- x = poster text size
+- y = average reading time
+- one point = one poster
+
+```{python}
+text_size = [8, 9, 10, 11, 12, 14, 16, 18, 20, 24]
+reading_time = [41, 38, 36, 31, 30, 26, 25, 22, 21, 23]
+
+fig, ax = plt.subplots(figsize=(6, 3.4))
+ax.scatter(text_size, reading_time, s=60, color=ACCENT, zorder=3)
+ax.set_xlabel("Poster text size (pt)")
+ax.set_ylabel("Average reading time (s)")
+ax.set_title("One point is one poster")
+ax.grid(True)
+ax.set_axisbelow(True)
+fig.tight_layout()
+plt.show()
+```
+
+## Read a scatterplot using four questions
+
+### 1. Direction
+
+Does $y$ generally:
+
+- increase as $x$ increases? → **positive**
+- decrease as $x$ increases? → **negative**
+- show no clear direction?
+
+### 2. Form
+
+Is the relationship:
+
+- approximately linear?
+- curved / nonlinear?
+- clustered?
+- something more complicated?
+
+Do not assume every relationship should be a straight line.
+
+### 3. Strength
+
+How closely do the points follow the overall pattern?
+
+Compare. Both panels share the same underlying relationship. Only the scatter around it differs.
+
+```{python}
+rng = np.random.default_rng(7)
+x = rng.uniform(8, 24, 40)
+
+fig, axes = plt.subplots(1, 2, figsize=(7.5, 3.1), sharey=True)
+for ax, spread, label in zip(axes, [2, 12], ["Strong pattern", "Weak pattern"]):
+    y = 40 - 0.8 * x + rng.normal(0, spread, x.size)
+    ax.scatter(x, y, s=36, color=ACCENT, zorder=3)
+    ax.set_title(label)
+    ax.set_xlabel("Text size (pt)")
+    ax.grid(True)
+    ax.set_axisbelow(True)
+
+axes[0].set_ylabel("Reading time (s)")
+fig.tight_layout()
+plt.show()
+```
+
+### 4. Unusual observations
+
+Look for points far from the main pattern.
+
+They may represent:
+
+- a genuine exceptional case;
+- measurement error;
+- data-entry error;
+- a subgroup worth investigating.
+
+Do not silently delete them.
+
+::: {.callout-warning title="Scatterplot ≠ proof"}
+Even a beautiful, strong relationship only establishes an **association** from the plot itself.
+
+It does not establish that changing $x$ will cause $y$ to change.
+:::
+
+### Sentence template
+
+> As **[x]** increases, **[y]** tends to **[increase/decrease]**. The relationship appears **[roughly linear/nonlinear]**, with **[little/substantial]** scatter and **[no/some]** unusual observations.
+
+# 5. Dot plots and the mean
+
+## Dot plot
+
+A dot plot displays the distribution of **one numerical variable**.
+
+Each dot represents an observation.
+
+It works especially well for relatively small datasets because you can still see individual values.
+
+```{python}
+from collections import Counter
+
+times = [6, 8, 8, 9, 10, 10, 10, 12, 14]
+
+xs, ys = [], []
+for value, n in Counter(times).items():
+    for level in range(n):
+        xs.append(value)
+        ys.append(level + 1)
+
+fig, ax = plt.subplots(figsize=(6, 2.4))
+ax.scatter(xs, ys, s=80, color=ACCENT, zorder=3)
+ax.set_ylim(0.3, max(ys) + 1)
+ax.set_yticks([])
+ax.set_xlabel("Viewing time (s)")
+ax.set_title("One dot is one observation")
+ax.spines["left"].set_visible(False)
+ax.xaxis.grid(True)
+ax.set_axisbelow(True)
+fig.tight_layout()
+plt.show()
+```
+
+For large datasets, histograms are usually more readable.
+
+---
+
+## Mean
+
+The **mean** is the arithmetic average and a measure of the center of a distribution.
+
+For observations
+
+$$
+x_1,x_2,\ldots,x_n
+$$
+
+the **sample mean** is
+
+$$
+\bar{x}
+=
+\frac{x_1+x_2+\cdots+x_n}{n}
+=
+\frac{1}{n}\sum_{i=1}^{n}x_i.
+$$
+
+Where:
+
+- $x_i$ = one observed value
+- $n$ = number of observations
+- $\bar{x}$ = sample mean
+
+### Example
+
+Five reading times:
+
+$$
+8,\;9,\;10,\;13,\;15
+$$
+
+Then
+
+$$
+\bar{x}
+=
+\frac{8+9+10+13+15}{5}
+=
+11.
+$$
+
+Average reading time = **11 seconds**.
+
+---
+
+## Think of the mean as a balancing point
+
+The mean is not simply "the most common" or "the middle" observation.
+
+It can be imagined as the **balance point** of the distribution.
+
+The panels below hold the same four small values. Only the last value changes. The mean follows it. The median does not.
+
+```{python}
+fig, axes = plt.subplots(2, 1, figsize=(6.5, 3.4), sharex=True)
+
+for ax, times in zip(axes, [[8, 9, 10, 13, 15], [8, 9, 10, 13, 60]]):
+    mean = np.mean(times)
+    median = np.median(times)
+    pad = (max(times) - min(times)) * 0.02
+    ax.scatter(times, [1] * len(times), s=70, color=ACCENT, zorder=3)
+    ax.axvline(mean, color=SECOND, lw=2)
+    ax.axvline(median, color=MUTED, lw=2, ls="--")
+    ax.text(mean + pad, 1.5, f"mean {mean:.1f}", color=SECOND, ha="left", fontsize=9)
+    ax.text(median - pad, 0.4, f"median {median:.1f}", color=MUTED, ha="right", fontsize=9)
+    ax.set_ylim(0.2, 1.8)
+    ax.set_yticks([])
+    ax.spines["left"].set_visible(False)
+
+axes[1].set_xlabel("Reading time (s)")
+fig.tight_layout()
+plt.show()
+```
+
+Values far away from the center contribute strongly to where this balancing point lies.
+
+---
+
+## Sample mean vs. population mean
+
+Sample mean:
+
+$$
+\bar{x}
+$$
+
+Population mean:
+
+$$
+\mu
+$$
+
+Usually we cannot measure every case in the population, so we use
+
+$$
+\bar{x}
+$$
+
+as an estimate of
+
+$$
+\mu.
+$$
+
+```{mermaid}
+flowchart BT
+    A["Sample mean x&#772;"] -->|estimates| B["Population mean &mu;"]
+```
+
+---
+
+## Why means are useful
+
+Means put totals into a common unit.
+
+Instead of:
+
+> 220 minutes of viewing across 20 visitors
+
+we can say:
+
+$$
+\frac{220\text{ min}}{20\text{ visitors}}
+=
+11\text{ min/visitor}.
+$$
+
+This makes comparisons easier.
+
+---
+
+## Weighted means
+
+Be careful when averaging averages from groups of different sizes.
+
+Suppose:
+
+| Test group | Users | Mean completion time |
+|---|---:|---:|
+| A | 10 | 20 s |
+| B | 90 | 30 s |
+
+The overall mean is **not**
+
+$$
+\frac{20+30}{2}=25.
+$$
+
+Group B represents nine times as many users.
+
+Instead:
+
+$$
+\bar{x}
+=
+\frac{10(20)+90(30)}{100}
+=
+29\text{ s}.
+$$
+
+::: {.callout-warning title="Common mean mistake"}
+Do not give groups equal weight when the groups contain very different numbers of observations.
+
+Ask what each number being averaged actually represents.
+:::
+
+# 6. Histograms and distribution shape
+
+Use a **histogram** to display the distribution of **one numerical variable**, especially when there are too many observations for a dot plot.
+
+Instead of drawing each observation separately, values are grouped into intervals called **bins**.
+
+Higher bars mean more observations occur in that numerical region.
+
+The three panels below show **the same 360 visitors**. Only the number of bins changes. Five bins flatten the detail. Sixty bins show noise between the bins as if it were structure. Twelve bins show the two groups of visitors most clearly.
+
+```{python}
+rng = np.random.default_rng(3)
+visits = np.concatenate([rng.normal(12, 2.5, 220), rng.normal(26, 3.0, 140)])
+
+fig, axes = plt.subplots(1, 3, figsize=(9, 2.8))
+for ax, bins in zip(axes, [5, 12, 60]):
+    ax.hist(visits, bins=bins, color=ACCENT)
+    ax.set_title(f"{bins} bins")
+    ax.set_xlabel("Minutes")
+    ax.yaxis.grid(True)
+    ax.set_axisbelow(True)
+    ax.spines["left"].set_visible(False)
+    ax.tick_params(left=False)
+
+fig.supylabel("Number of visitors", fontsize=10, color=MUTED)
+fig.tight_layout()
+plt.show()
+```
+
+::: {.callout-warning title="The bin width is a design decision"}
+Nobody measured the bins. Someone chose them. A different choice tells a different story about the same observations.
+:::
+
+## What a histogram preserves
+
+It helps reveal:
+
+- where observations concentrate;
+- overall shape;
+- skew;
+- peaks / modes;
+- approximate center;
+- approximate spread;
+- unusual regions or gaps.
+
+## What it hides
+
+Because observations are grouped into bins, you cannot usually recover the exact individual values.
+
+A histogram is therefore a **summary of the distribution**, not a case-by-case display.
+
+---
+
+## Shape: symmetric vs. skewed
+
+### Symmetric
+
+Both sides trail off in roughly similar ways.
+
+### Right-skewed
+
+Long tail points toward **higher values**.
+
+Often:
+
+- many observations are relatively low;
+- a few observations are very high.
+
+### Left-skewed
+
+Long tail points toward **lower values**.
+
+Compare the three shapes. The orange line marks the mean. The dashed grey line marks the median. Skew pulls the mean into the tail and leaves the median behind.
+
+```{python}
+rng = np.random.default_rng(11)
+samples = {
+    "Symmetric": rng.normal(50, 10, 800),
+    "Right-skewed": rng.gamma(2.0, 8.0, 800),
+    "Left-skewed": 100 - rng.gamma(2.0, 8.0, 800),
+}
+
+fig, axes = plt.subplots(1, 3, figsize=(9, 2.8))
+for ax, (name, values) in zip(axes, samples.items()):
+    ax.hist(values, bins=30, color=ACCENT)
+    ax.axvline(np.mean(values), color=SECOND, lw=2, label="mean")
+    ax.axvline(np.median(values), color=MUTED, lw=2, ls="--", label="median")
+    ax.set_title(name)
+    ax.set_yticks([])
+    ax.spines["left"].set_visible(False)
+
+axes[0].set_ylabel("count")
+axes[0].legend(frameon=False, fontsize=8, loc="upper left")
+fig.tight_layout()
+plt.show()
+```
+
+::: {.callout-important title="Name the skew from the tail"}
+**Right-skewed** does not mean "most observations are on the right."
+
+It means the **long tail points right**.
+
+Likewise, left-skewed = long tail to the left.
+:::
+
+---
+
+## Modes
+
+A **mode** is a prominent peak in a distribution.
+
+The useful question is not necessarily:
+
+> Which exact value occurs most often?
+
+For numerical data, instead ask:
+
+> How many **prominent peaks** are visible?
+
+- **unimodal** → one prominent peak
+- **bimodal** → two
+- **multimodal** → more than two
+
+A bimodal distribution may suggest that two different groups have been combined.
+
+Example:
+
+> Heights measured from children and adults might produce two peaks.
+
+### Description template
+
+> The distribution of **[variable]** is **[unimodal/bimodal/multimodal]** and **[symmetric/right-skewed/left-skewed]**, with most observations around **[region]** and **[any unusual features]**.
+
+# 7. Box plots, quartiles, and the median
+
+## Median
+
+First order the observations from smallest to largest.
+
+The **median** is the value in the middle.
+
+### Odd number of observations
+
+```text
+2  4  7  8  19
+      ↑
+    median
+```
+
+Median = **7**
+
+### Even number of observations
+
+```text
+2  4  7  8  19  23
+      ↑  ↑
+```
+
+Average the two middle values:
+
+$$
+\text{median}
+=
+\frac{7+8}{2}
+=
+7.5
+$$
+
+The median is also the **50th percentile**:
+
+- 50% of observations are below it;
+- 50% are above it.
+
+---
+
+## Quartiles
+
+Quartiles split an ordered distribution into four parts.
+
+- $Q_1$ = 25th percentile
+- median = 50th percentile
+- $Q_3$ = 75th percentile
+
+```{mermaid}
+flowchart LR
+    A["Ordered observations"] --> B["25% below Q1"]
+    A --> C["25% from Q1 to the median"]
+    A --> D["25% from the median to Q3"]
+    A --> E["25% above Q3"]
+```
+
+Approximately:
+
+- 25% below $Q_1$
+- 25% between $Q_1$ and median
+- 25% between median and $Q_3$
+- 25% above $Q_3$
+
+---
+
+## Interquartile range
+
+The **interquartile range (IQR)** measures the width of the middle 50%:
+
+$$
+IQR = Q_3-Q_1.
+$$
+
+Large IQR → middle half of observations are spread widely.
+
+Small IQR → middle half are relatively concentrated.
+
+---
+
+## Reading a box plot
+
+The two panels below show the same observations. The histogram shows the shape. The box plot compresses that shape into five numbers and the potential outliers.
+
+```{python}
+rng = np.random.default_rng(5)
+times = np.concatenate([rng.gamma(3.0, 4.0, 120), [65, 72]])
+
+fig, (top, bottom) = plt.subplots(
+    2, 1, figsize=(6.5, 3.4), sharex=True, gridspec_kw={"height_ratios": [3, 1]}
+)
+
+top.hist(times, bins=30, color=ACCENT)
+top.set_ylabel("count")
+top.set_yticks([])
+top.spines["left"].set_visible(False)
+
+bottom.boxplot(
+    times,
+    vert=False,
+    widths=0.5,
+    patch_artist=True,
+    boxprops={"facecolor": FILL, "edgecolor": ACCENT},
+    medianprops={"color": SECOND, "linewidth": 2},
+    whiskerprops={"color": ACCENT},
+    capprops={"color": ACCENT},
+    flierprops={
+        "marker": "o",
+        "markersize": 5,
+        "markerfacecolor": "none",
+        "markeredgecolor": SECOND,
+    },
+)
+bottom.set_yticks([])
+bottom.set_xlabel("Viewing time (s)")
+bottom.spines["left"].set_visible(False)
+fig.tight_layout()
+plt.show()
+```
+
+The orange line is the median. The circles beyond the whisker are potential outliers.
+
+The box runs from:
+
+$$
+Q_1 \rightarrow Q_3
+$$
+
+and therefore contains the **middle 50%** of observations.
+
+The line inside the box is the **median**.
+
+Whiskers extend toward observations outside the box, except observations flagged as unusually distant may be drawn individually.
+
+---
+
+## Potential outliers: the 1.5 × IQR rule
+
+A commonly used rule marks an observation as a potential outlier when it lies below
+
+$$
+Q_1-1.5(IQR)
+$$
+
+or above
+
+$$
+Q_3+1.5(IQR).
+$$
+
+These boundaries are sometimes called **fences**.
+
+::: {.callout-warning title="Outlier does not mean error"}
+A point beyond an outlier fence may be:
+
+- an error;
+- an unusual but genuine case;
+- evidence of skew;
+- the most interesting observation in the dataset.
+
+Investigate it before deciding what to do.
+:::
+
+# Bar plot vs. histogram
+
+These are easy to confuse.
+
+| | Bar plot | Histogram |
+|---|---|---|
+| Variable | Categorical | Numerical |
+| Each bar represents | A category | A numerical interval/bin |
+| x-axis | Labels | Numerical scale |
+| Order | Can often be rearranged | Must follow numerical order |
+| Gaps | Usually separated | Usually adjacent |
+| Main question | How common is each category? | What is the shape of the distribution? |
+
+# Which display should I use?
+
+```{mermaid}
+flowchart TD
+    A["What are you trying to describe?"]
+
+    A --> B["1 variable"]
+    A --> C["Relationship between 2 variables"]
+
+    B --> D["Categorical"]
+    B --> E["Numerical"]
+
+    D --> F["Bar plot"]
+
+    E --> G{"Small enough to<br/>show individual values?"}
+    G -->|Yes| H["Dot plot"]
+    G -->|No| I["Histogram"]
+    E --> J["Box plot<br/>for compact summary"]
+
+    C --> K["2 categorical"]
+    C --> L["2 numerical"]
+
+    K --> M["Contingency table"]
+    L --> N["Scatterplot"]
+```
+
+# Fast interpretation checklist
+
+When you see a visualization, ask:
+
+1. **What is one observation?**
+2. **Which variables are shown?**
+3. **Are they categorical or numerical?**
+4. **What is the population, and what is the sample?**
+5. **Is the visualization appropriate for the variable type?**
+6. **Where is the center?**
+7. **How spread out are the observations?**
+8. **What is the shape?**
+9. **Are there clusters, gaps, or unusual observations?**
+10. **Is the chart showing association, or is someone claiming causation?**
+
+# Five formulas / definitions worth remembering
+
+### Sample mean
+
+$$
+\boxed{
+\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i
+}
+$$
+
+### Population mean
+
+$$
+\boxed{\mu}
+$$
+
+### Median
+
+$$
+\boxed{\text{50th percentile}}
+$$
+
+### Interquartile range
+
+$$
+\boxed{IQR=Q_3-Q_1}
+$$
+
+### Common potential-outlier fences
+
+$$
+\boxed{Q_1-1.5IQR}
+\qquad
+\boxed{Q_3+1.5IQR}
+$$
+
+# One-minute summary
+
+| Situation | Main idea |
+|---|---|
+| Dataset | rows = observations; columns = variables |
+| Numerical variable | arithmetic is meaningful |
+| Categorical variable | values represent groups |
+| Discrete | countable numerical values |
+| Continuous | measured along a continuum |
+| Population | full group you want to understand |
+| Sample | observations you actually have |
+| Two categorical variables | contingency table |
+| One categorical variable | bar plot |
+| Two numerical variables | scatterplot |
+| Small numerical dataset | dot plot |
+| Numerical distribution | histogram |
+| Arithmetic center | mean $\bar{x}$ |
+| Middle observation | median |
+| Middle 50% | $Q_1$ to $Q_3$ |
+| Middle-50% spread | IQR |
+| Compact distribution summary | box plot |
+| Long tail right | right-skewed |
+| Long tail left | left-skewed |
+| Visible relationship | association |
+| Association | **not automatically causation** |
+
+::: {.callout-tip title="For information designers"}
+A visualization is not merely decoration applied after analysis.
+
+Choosing between a bar plot, histogram, scatterplot, or box plot is part of the **reasoning**: each graphic answers a different kind of question and preserves or hides different features of the data.
+:::
