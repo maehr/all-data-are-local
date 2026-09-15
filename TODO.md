@@ -14,7 +14,6 @@ The course site is built and the template placeholders are resolved. The tasks b
 
 ### Metadata
 
-- [ ] `[Agent]` Add the ORCID of Moritz Mähr to `CITATION.cff`. The template placeholder was removed rather than guessed.
 - [ ] `[Agent]` Replace the template favicons at the repository root: `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `android-chrome-192x192.png`, and `android-chrome-512x512.png`.
 - [ ] `[Agent]` Set the course colours and fonts in `_brand.yml`. See the [brand.yml guide](https://quarto.org/docs/authoring/brand.html).
 

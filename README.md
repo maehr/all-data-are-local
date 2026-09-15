@@ -109,7 +109,7 @@ The [repository tags](https://github.com/maehr/all-data-are-local/tags) list the
 
 ## Authors And Acknowledgment
 
-- **Moritz Mähr** — course design and materials — [maehr](https://github.com/maehr)
+- **Moritz Mähr** — course design and materials — [maehr](https://github.com/maehr), [ORCID 0000-0002-1367-1618](https://orcid.org/0000-0002-1367-1618), <https://moritzmaehr.ch/>
 
 See the [contributors page](https://github.com/maehr/all-data-are-local/graphs/contributors) for further contributions.
 

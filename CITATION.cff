@@ -10,6 +10,9 @@ authors:
   - given-names: Moritz
     family-names: Mähr
     email: 'moritz.maehr@gmail.com'
+    orcid: 'https://orcid.org/0000-0002-1367-1618'
+    affiliation: University of Bern
+    website: 'https://moritzmaehr.ch/'
 repository-code: 'https://github.com/maehr/all-data-are-local'
 url: 'https://maehr.github.io/all-data-are-local/'
 abstract: >-
