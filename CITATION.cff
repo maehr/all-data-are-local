@@ -1,23 +1,27 @@
 cff-version: 1.2.0
-title: GitHub Template for FAIR and Open Research Data
+title: 'All Data Are Local: Introduction to Data Literacy'
 message: >-
-  If you use this template, please cite it using the
-  metadata from this file.
-type: software
-version: 1.0.0
+  If you use these course materials, please cite them using
+  the metadata from this file.
+# CFF 1.2.0 allows only `software` or `dataset`. `dataset` is the closest
+# match for teaching material.
+type: dataset
 authors:
-  - family-names: Mähr
-    given-names: Moritz
-    alias: maehr
-    orcid: 'https://orcid.org/0000-0002-1367-1618'
-  - family-names: Twente
-    given-names: Moritz
-    alias: mtwente
-    orcid: 'https://orcid.org/0009-0005-7187-9774'
-repository-code: 'https://github.com/maehr/open-research-data-template'
-url: 'https://maehr.github.io/open-research-data-template/'
-doi: '10.5281/zenodo.19111355'
-license: AGPL-3.0
+  - given-names: Moritz
+    family-names: Mähr
+    email: 'moritz.maehr@gmail.com'
+repository-code: 'https://github.com/maehr/all-data-are-local'
+url: 'https://maehr.github.io/all-data-are-local/'
 abstract: >-
-  GitHub template for FAIR and open research data documentation with Quarto,
-  GitHub Pages, and Zenodo-ready release workflows.
+  Course materials for a two-day block course on critical data
+  literacy in Data Design + Art. The course reads Yanni Alexander
+  Loukissas, All Data Are Local, and pairs it with basic statistics
+  from Introduction to Modern Statistics (2e).
+keywords:
+  - data literacy
+  - critical data studies
+  - teaching materials
+  - data visualization
+  - statistics
+doi: DOI
+license: CC-BY-4.0

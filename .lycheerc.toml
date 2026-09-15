@@ -3,13 +3,15 @@
 
 # Exclude template placeholders from link checking
 exclude = [
-  "USERNAME",
-  "REPO_NAME",
   "ZENODO_RECORD",
+  # MIT Press blocks automated requests with 403. The link is correct.
+  "https://direct.mit.edu/",
+  # These resolve once GitHub Pages and Discussions are enabled. See TODO.md.
+  "https://maehr.github.io/all-data-are-local/",
+  "https://github.com/maehr/all-data-are-local/discussions",
+  "https://github.com/maehr/all-data-are-local/stargazers",
   "GITHUB_REPO_ID",
   "DOI",
-  "FULLNAME",
-  "\\[INSERT CONTACT METHOD\\]",
   "https://www.gnu.org/licenses/",
   "https://www.gnu.org/licenses/agpl-3.0.html",
   "https://www.makeareadme.com/",

@@ -1,9 +1,9 @@
 meta:
-  name: REPO_NAME
+  name: All Data Are Local
   link:
-    home: https://USERNAME.github.io/REPO_NAME
-    github: https://github.com/USERNAME
+    home: https://maehr.github.io/all-data-are-local
+    github: https://github.com/maehr/all-data-are-local
   description: |
-    SHORT_DESCRIPTION
+    Course materials for a two-day block course on critical data literacy in Data Design + Art
 
 # Go to https://quarto.org/docs/authoring/brand.html to learn more about multiformat branding with brand.yml
