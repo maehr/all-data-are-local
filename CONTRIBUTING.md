@@ -17,6 +17,6 @@ Agents can usually handle documentation edits, placeholder replacement, formatti
 3. Update affected docs together, especially `README.md`, `README.template.md`, `TODO.md`, `index.qmd`, and citation or governance templates.
 4. Run `npm run preview` while editing documentation.
 5. Run `npm run format` and `npm run check` before requesting review.
-6. Run language-specific checks when relevant: `uv run ruff check`, `uv run ty check`, `styler::style_dir(".")`, and `lintr::lint_dir(".")`.
+6. Run language-specific checks when relevant: `uv run ruff check` and `uv run ty check`.
 7. Commit with a Conventional Commit subject, for example `git commit -m "docs: simplify project setup guide"`.
 8. Wait for maintainer review before merging.
