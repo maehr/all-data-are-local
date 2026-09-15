@@ -9,6 +9,7 @@ type: dataset
 authors:
   - given-names: Moritz
     family-names: Mähr
+    name-suffix: Dr. sc.
     email: 'moritz.maehr@gmail.com'
     orcid: 'https://orcid.org/0000-0002-1367-1618'
     affiliation: University of Bern

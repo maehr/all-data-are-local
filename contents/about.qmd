@@ -7,7 +7,7 @@ This two-day block course is part of **PLAY 1 / Data Literacy** in Data Design +
 
 ## Instructor
 
-[Moritz Mähr](https://moritzmaehr.ch/) teaches the course. He is a research associate in digital history at the University of Bern, and he lectures in history at UniDistance.ch. He also works on research analytics at ETH Zurich.
+[Dr. sc. Moritz Mähr](https://moritzmaehr.ch/) teaches the course. He is a research associate in digital history at the University of Bern, and he lectures in history at UniDistance.ch. He also works on research analytics at ETH Zurich.
 
 His work joins digital history, science and technology studies, and open research infrastructure. He builds reproducible methods and interoperable infrastructures, and he applies the FAIR and CARE principles to research data. He teaches source criticism for the age of AI, critical AI literacy, and research data management.
 

@@ -27,7 +27,7 @@ The repository holds every public course page. Students read the published websi
 | Format          | 2 days, 6 sessions per day, 60 minutes per session                    |
 | Dates           | Day 1 on 5 October 2026, Day 2 on 12 October 2026                     |
 | Contact time    | 12 hours                                                              |
-| Instructor      | Moritz Mähr                                                           |
+| Instructor      | Dr. sc. Moritz Mähr                                                   |
 | Core text       | Loukissas, _All Data Are Local_ (open access)                         |
 | Statistics text | Çetinkaya-Rundel and Hardin, _Introduction to Modern Statistics (2e)_ |
 | Assessment      | Participation, a quiz on Day 2, and a written dataset description     |
@@ -86,7 +86,7 @@ Cite this course as described in [CITATION.cff](CITATION.cff). Archived releases
 
 ## Support
 
-Moritz Mähr maintains this repository. Use a public channel when you can, so that other people find the answer.
+Dr. sc. Moritz Mähr maintains this repository. Use a public channel when you can, so that other people find the answer.
 
 | Type                                   | Platform                                                                      |
 | -------------------------------------- | ----------------------------------------------------------------------------- |
@@ -109,7 +109,7 @@ The [repository tags](https://github.com/maehr/all-data-are-local/tags) list the
 
 ## Authors And Acknowledgment
 
-- **Moritz Mähr** — course design and materials — [maehr](https://github.com/maehr), [ORCID 0000-0002-1367-1618](https://orcid.org/0000-0002-1367-1618), <https://moritzmaehr.ch/>
+- **Dr. sc. Moritz Mähr** — course design and materials — [maehr](https://github.com/maehr), [ORCID 0000-0002-1367-1618](https://orcid.org/0000-0002-1367-1618), <https://moritzmaehr.ch/>
 
 See the [contributors page](https://github.com/maehr/all-data-are-local/graphs/contributors) for further contributions.
 

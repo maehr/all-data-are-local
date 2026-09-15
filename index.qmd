@@ -22,7 +22,7 @@ flowchart TD
     C --> D["<b>After Day 2</b><br/>Describe your dataset"]
 ```
 
-Both days hold six sessions of 60 minutes, so the course gives 12 hours of contact time. It belongs to the module PLAY 1 / Data Literacy in Data Design + Art. Moritz Mähr teaches it.
+Both days hold six sessions of 60 minutes, so the course gives 12 hours of contact time. It belongs to the module PLAY 1 / Data Literacy in Data Design + Art. Dr. sc. Moritz Mähr teaches it.
 
 The core text is Yanni Alexander Loukissas's _All Data Are Local_. We read the Introduction and Chapters 1 and 2 on Day 1. We read Chapters 6 and 7 on Day 2.
 
