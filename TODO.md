@@ -19,17 +19,9 @@ The course site is built and the template placeholders are resolved. The tasks b
 
 ### GitHub
 
-- [ ] `[Manual]` Enable GitHub Pages in the repository settings with **Source: GitHub Actions**.
-- [ ] `[Shared]` Enable GitHub security alerts and Dependabot security updates.
-- [ ] `[Shared]` Protect the `main` branch, so that a pull request review is required and force pushes are disabled.
-
-```bash
-gh api -X PATCH repos/maehr/all-data-are-local \
-  -F security_and_analysis[secret_scanning][status]=enabled \
-  -F security_and_analysis[secret_scanning_push_protection][status]=enabled
-gh api -X PUT repos/maehr/all-data-are-local/vulnerability-alerts
-gh api -X PUT repos/maehr/all-data-are-local/automated-security-fixes
-```
+- [x] `[Manual]` Enable GitHub Pages in the repository settings with **Source: GitHub Actions**. Done. The site is live at <https://maehr.github.io/all-data-are-local/>.
+- [x] `[Shared]` Enable GitHub security alerts and Dependabot security updates. Done, with secret scanning and push protection.
+- [x] `[Shared]` Protect the `main` branch. Done. A pull request and passing checks are required. Force pushes and deletions are blocked. Required approvals are set to 0, because one person maintains the repository. Raise the count when a second maintainer joins.
 
 ### Zenodo and DOI
 
