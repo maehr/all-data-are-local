@@ -9,6 +9,8 @@ The course runs on two days, with six hours of teaching on each day. Each day ho
 
 The core text is Yanni Alexander Loukissas, _All Data Are Local_. The statistics text is Mine Çetinkaya-Rundel and Johanna Hardin, _Introduction to Modern Statistics (2e)_.
 
+We read Loukissas together in the sessions. You do not need to read him beforehand. You study the statistics sections on your own, between the two days.
+
 ```{mermaid}
 flowchart LR
     A["<b>Day 1</b><br/>Sessions 1 to 6<br/>How does the world<br/>become data?"] --> B["<b>Self-study</b><br/>Ten IMS sections<br/>Bring one dataset"]

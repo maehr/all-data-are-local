@@ -4,13 +4,15 @@ subtitle: 'Day 1 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Reading:** Loukissas, Introduction, pp. 1–12
+- **Close reading:** Loukissas, Introduction, pp. 1–12
 - **Output:** Data Setting questions
 :::
 
-## Reading
+## Close reading
 
-Loukissas, Introduction, pp. 1–12. Read it closely before the session.
+Loukissas, Introduction, pp. 1–12.
+
+We read this text together in the session.
 
 ## Reading summary
 

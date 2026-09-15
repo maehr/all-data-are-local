@@ -4,13 +4,15 @@ subtitle: 'Day 2 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Reading:** Loukissas, Chapter 6, *Models of Local Practice*, pp. 161–188
+- **Close reading:** Loukissas, Chapter 6, *Models of Local Practice*, pp. 161–188
 - **Output:** Design principles
 :::
 
-## Reading
+## Close reading
 
 Loukissas, Chapter 6, _Models of Local Practice_, pp. 161–188. [Session 9](09-models-of-local-practice-ii.qmd) reads the same chapter from a different angle.
+
+We read this text together in the session.
 
 ## Reading summary
 

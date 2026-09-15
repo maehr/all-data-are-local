@@ -4,13 +4,15 @@ subtitle: 'Day 1 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Reading:** Loukissas, Chapter 1, *Local Origins*, pp. 13–26
+- **Close reading:** Loukissas, Chapter 1, *Local Origins*, pp. 13–26
 - **Output:** Notes on how data are made
 :::
 
-## Reading
+## Close reading
 
 Loukissas, Chapter 1, _Local Origins_, pp. 13–26. [Session 4](04-what-does-local-mean.qmd) reads the same chapter from a different angle.
+
+We read this text together in the session.
 
 ## Reading summary
 

@@ -4,13 +4,15 @@ subtitle: 'Day 1 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Reading:** Loukissas, Chapter 2, *A Place for Plant Data*, pp. 27–54
+- **Close reading:** Loukissas, Chapter 2, *A Place for Plant Data*, pp. 27–54
 - **Output:** Map of data-place relations
 :::
 
-## Reading
+## Close reading
 
 Loukissas, Chapter 2, _A Place for Plant Data_, pp. 27–54. [Session 6](06-from-world-to-table.qmd) reads the same chapter from a different angle.
+
+We read this text together in the session.
 
 ## Reading summary
 
