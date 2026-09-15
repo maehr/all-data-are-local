@@ -88,14 +88,14 @@ Cite this course as described in [CITATION.cff](CITATION.cff). Archived releases
 
 Dr. sc. Moritz Mähr maintains this repository. Use a public channel when you can, so that other people find the answer.
 
-| Type                                   | Platform                                                                      |
-| -------------------------------------- | ----------------------------------------------------------------------------- |
-| 🚨 **Bug reports**                     | [GitHub Issues](https://github.com/maehr/all-data-are-local/issues)           |
-| 📚 **Content corrections**             | [GitHub Issues](https://github.com/maehr/all-data-are-local/issues)           |
-| 🎁 **Feature requests**                | [GitHub Issues](https://github.com/maehr/all-data-are-local/issues)           |
+| Type                                  | Platform                                                                      |
+| ------------------------------------- | ----------------------------------------------------------------------------- |
+| 🚨 **Bug reports**                    | [GitHub Issues](https://github.com/maehr/all-data-are-local/issues)           |
+| 📚 **Content corrections**            | [GitHub Issues](https://github.com/maehr/all-data-are-local/issues)           |
+| 🎁 **Feature requests**               | [GitHub Issues](https://github.com/maehr/all-data-are-local/issues)           |
 | 🛡 **Report a security vulnerability** | See [SECURITY.md](SECURITY.md)                                                |
-| 💬 **General questions**               | [GitHub Discussions](https://github.com/maehr/all-data-are-local/discussions) |
-| 🔒 **Private contact**                 | moritz.maehr@gmail.com                                                        |
+| 💬 **General questions**              | [GitHub Discussions](https://github.com/maehr/all-data-are-local/discussions) |
+| 🔒 **Private contact**                | moritz.maehr@gmail.com                                                        |
 
 Students in the course use the module channel first.
 

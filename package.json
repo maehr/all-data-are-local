@@ -17,11 +17,11 @@
     "lychee-check": "lychee --config .lycheerc.toml './*.md' './*.qmd' './contents/**/*.qmd' './documentation/**/*.qmd'"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.2",
-    "@commitlint/config-conventional": "^21.0.2",
-    "@j178/prek": "^0.4.4",
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "@j178/prek": "^0.5.3",
     "git-cliff": "^2.13.1",
-    "prettier": "^3.8.4"
+    "prettier": "^3.9.6"
   },
   "engines": {
     "node": ">=24"
