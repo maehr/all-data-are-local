@@ -647,7 +647,7 @@ This step needs an appropriate sampling design. A sample that is not representat
 
 ```{mermaid}
 flowchart BT
-    A["Sample mean x&#772;"] -->|estimates| B["Population mean &mu;"]
+    A["Sample mean x̄"] -->|estimates| B["Population mean μ"]
 ```
 
 ---
