@@ -4,6 +4,7 @@ subtitle: 'Day 1 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
+- **Reading:** None assigned — this session opens the course
 - **Material:** Objects, traces, records, tables
 - **Output:** Working definition of data
 :::

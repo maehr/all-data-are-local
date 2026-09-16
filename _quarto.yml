@@ -84,8 +84,14 @@ website:
             href: SECURITY.md
 
   page-footer:
-    left: 'Content under [CC BY 4.0](/LICENSE-CCBY.md), code under [AGPL 3.0](/LICENSE-AGPL.md).'
-    right: 'Built with [Quarto](https://quarto.org/).'
+    left:
+      - text: Content under CC BY 4.0
+        href: LICENSE-CCBY.md
+      - text: Code under AGPL 3.0
+        href: LICENSE-AGPL.md
+    right:
+      - text: Built with Quarto
+        href: https://quarto.org/
 
 format:
   html:

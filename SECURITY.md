@@ -1,29 +1,13 @@
 # Security Policy
 
-<!--
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
--->
+This repository publishes a course website. Only the current content on `main` is supported.
 
 ## Reporting a Vulnerability
 
-<!--
-Use this section to tell people how to report a vulnerability.
+Do not open a public issue for a security problem. A public report tells everyone about the problem before a fix exists.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
--->
+Email <moritz.maehr@gmail.com> instead. Include a description of the issue, the steps you took to create it, the affected versions, and, if you know them, the mitigations. This project follows a 90 day disclosure timeline.
 
-To report a security issue, please email moritz.maehr@gmail.com with a description of the issue, the steps you took to create the issue, affected versions, and, if known, mitigations for the issue. This project follows a 90 day disclosure timeline.
-
-If you use a coding agent while investigating a security issue, keep the initial report private. Agents can help reproduce the bug, prepare a minimal fix, update documentation, and run local validation, but maintainers should handle the private disclosure and the final release decision.
+If you use a coding agent while you investigate, keep the initial report private. An agent can help you reproduce the bug, prepare a minimal fix, update the documentation, and run local validation. The maintainer handles the private disclosure and the final release decision.

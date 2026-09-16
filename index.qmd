@@ -61,4 +61,4 @@ Day 2 starts with a short multiple-choice quiz on the required sections. The qui
 
 ## License
 
-Course content is available under [CC BY 4.0](/LICENSE-CCBY.md). Code is available under [AGPL 3.0](/LICENSE-AGPL.md). Cite this course as described in [CITATION.cff](https://github.com/maehr/all-data-are-local/blob/main/CITATION.cff).
+Course content is available under [CC BY 4.0](LICENSE-CCBY.md). Code is available under [AGPL 3.0](LICENSE-AGPL.md). Cite this course as described in [CITATION.cff](https://github.com/maehr/all-data-are-local/blob/main/CITATION.cff).

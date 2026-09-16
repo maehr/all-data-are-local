@@ -5,8 +5,8 @@ Course materials for **All Data Are Local: Introduction to Data Literacy**, a tw
 [![GitHub issues](https://img.shields.io/github/issues/maehr/all-data-are-local.svg)](https://github.com/maehr/all-data-are-local/issues)
 [![GitHub forks](https://img.shields.io/github/forks/maehr/all-data-are-local.svg)](https://github.com/maehr/all-data-are-local/network)
 [![GitHub stars](https://img.shields.io/github/stars/maehr/all-data-are-local.svg)](https://github.com/maehr/all-data-are-local/stargazers)
-[![Code license](https://img.shields.io/github/license/maehr/all-data-are-local.svg)](https://github.com/maehr/all-data-are-local/blob/main/LICENSE-AGPL.md)
-[![Data license](https://img.shields.io/github/license/maehr/all-data-are-local.svg)](https://github.com/maehr/all-data-are-local/blob/main/LICENSE-CCBY.md)
+[![Code license](https://img.shields.io/badge/code%20license-AGPL--3.0-blue.svg)](https://github.com/maehr/all-data-are-local/blob/main/LICENSE-AGPL.md)
+[![Content license](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue.svg)](https://github.com/maehr/all-data-are-local/blob/main/LICENSE-CCBY.md)
 [![DOI](https://zenodo.org/badge/GITHUB_REPO_ID.svg)](https://zenodo.org/badge/latestdoi/ZENODO_RECORD)
 
 **Course website: <https://maehr.github.io/all-data-are-local/>**

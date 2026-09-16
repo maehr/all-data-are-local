@@ -4,6 +4,7 @@ subtitle: 'Day 2 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
+- **Reading:** None assigned — this session reviews the whole course
 - **Material:** All course material
 - **Output:** Critical Data Practice checklist
 :::

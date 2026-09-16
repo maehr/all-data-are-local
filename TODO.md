@@ -15,7 +15,7 @@ The course site is built and the template placeholders are resolved. The tasks b
 ### Metadata
 
 - [ ] `[Agent]` Replace the template favicons at the repository root: `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `android-chrome-192x192.png`, and `android-chrome-512x512.png`.
-- [ ] `[Agent]` Set the course colours and fonts in `_brand.yml`. See the [brand.yml guide](https://quarto.org/docs/authoring/brand.html).
+- [x] `[Agent]` Set the course colours and fonts in `_brand.yml`. Done. The site uses a high-contrast greyscale palette and the IBM Plex fonts.
 
 ### GitHub
 
@@ -28,11 +28,11 @@ The course site is built and the template placeholders are resolved. The tasks b
 - [ ] `[Manual]` Enable the Zenodo-GitHub integration, so that Zenodo archives each release and mints a DOI.
 - [ ] `[Agent]` Replace `GITHUB_REPO_ID` in `README.md` with the numeric repository ID. Read the `id` field from `https://api.github.com/repos/maehr/all-data-are-local`.
 - [ ] `[Shared]` Prepare a release archive with `npm run release:prepare -- --tag vX.Y.Z`. Commit the generated `release-artifacts/site-vX.Y.Z.zip`.
-- [ ] `[Shared]` After the first release, replace `DOI` in `CITATION.cff` and `ZENODO_RECORD` in `README.md`. Use the concept DOI, because it stays stable across releases.
+- [ ] `[Shared]` After the first release, add a `doi` key to `CITATION.cff` and replace `ZENODO_RECORD` in `README.md`. Use the concept DOI, because it stays stable across releases.
 
 ### Course content
 
-- [ ] `[Manual]` Confirm the subtitle of the statistics cheat sheet. The source file said "BA Arts and Information Design". The rest of the course says "Data Design + Art". The site now uses "Data Design + Art".
+- [x] `[Manual]` Confirm the subtitle of the statistics cheat sheet. Done. The [HSLU programme page](https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/degree-programmes/bachelor/data-design-and-art/) names the programme **Bachelor in Data Design + Art** at the **Lucerne School of Design, Film and Art**. The degree awarded is **Bachelor of Arts in Visual Communication with a specialization in Data Design + Art**. The source file's "BA Arts and Information Design" is stale. The site keeps **Data Design + Art**.
 - [ ] `[Manual]` Write the multiple-choice quiz for [Session 7](contents/sessions/07-statistics-knowledge-check.qmd). No source material exists for it yet.
 
 ## Validation
@@ -46,5 +46,6 @@ Run these commands before you push.
 | `npm run preview`      | Find rendering problems   |
 | `npm run lychee-check` | Find dead links           |
 | `uv run ruff check`    | Lint Python code          |
+| `uv run ty check`      | Type check Python code    |
 
 Look at `contents/cheat-sheet.qmd` in the preview after a change. Check that every figure draws and that no axis label is clipped.

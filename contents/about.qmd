@@ -41,7 +41,7 @@ The central principle is:
 
 ## Reuse
 
-The course content is available under [CC BY 4.0](/LICENSE-CCBY.md). You can copy it, change it, and teach it, if you give credit. The [reuse guide](../documentation/index.qmd) explains how to adapt the site for your own course.
+The course content is available under [CC BY 4.0](../LICENSE-CCBY.md). You can copy it, change it, and teach it, if you give credit. The [reuse guide](../documentation/index.qmd) explains how to adapt the site for your own course.
 
 Cite the course as described in [CITATION.cff](https://github.com/maehr/all-data-are-local/blob/main/CITATION.cff).
 

@@ -4,7 +4,7 @@ description: How to adapt this course site for your own teaching.
 engine: markdown
 ---
 
-The course content is available under [CC BY 4.0](/LICENSE-CCBY.md). You can copy it, change it, and teach it, if you give credit. This page explains how the site is built.
+The course content is available under [CC BY 4.0](../LICENSE-CCBY.md). You can copy it, change it, and teach it, if you give credit. This page explains how the site is built.
 
 ## Where the content lives
 

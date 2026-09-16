@@ -4,7 +4,8 @@ subtitle: 'Day 2 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Material:** IMS self-study
+- **Reading:** The ten required IMS sections, studied between the two days
+- **Material:** Quiz and IMS self-study notes
 - **Output:** Quiz and correction notes
 :::
 
