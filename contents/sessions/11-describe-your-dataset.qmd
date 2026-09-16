@@ -1,0 +1,24 @@
+---
+title: 'Session 11 — Describe your dataset'
+subtitle: 'Day 2 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** None assigned — you work from your own dataset
+- **Material:** Own dataset
+- **Output:** Draft dataset description
+:::
+
+## In class
+
+Students work with their own dataset. They first describe it formally: observations, variables, variable types, population or scope, and useful summaries. They then describe its setting: origin, purpose, producers, collection process, categories, transformations, missing context, limits, and possible harms.
+
+Use the Data Setting Checklist from [Session 4](04-what-does-local-mean.qmd). Use the [statistics cheat sheet](../cheat-sheet.qmd) for the formal description.
+
+## Output
+
+A draft of the final assignment. The [assignments](../assignments.qmd) page lists the eight questions that the final text must answer.
+
+## Next
+
+[Session 12 — Review and synthesis](12-review-and-synthesis.qmd) closes the course with peer feedback.

@@ -1,0 +1,40 @@
+---
+title: 'Session 4 — What does local mean?'
+subtitle: 'Day 1 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Chapter 1, *Local Origins*, pp. 13–26
+- **Output:** Data Setting checklist
+:::
+
+## Close reading
+
+Chapter 1, _Local Origins_ [@loukissas2019, 13–26]. [Session 3](03-taking-data-apart.qmd) reads the same chapter from a different angle.
+
+We read this text together in the session.
+
+## Reading summary
+
+For Loukissas, **local** does not mean small or only geographic. Local conditions can be social, institutional, technical, cultural, or historical. They work at different scales. Data can travel, but they are always made and used in particular settings. The local is also not always good; local categories and practices can reproduce exclusion or bias.
+
+## In class
+
+Students build a **Data Setting Checklist**. The checklist asks eight things about a dataset:
+
+- who made it;
+- where it was made;
+- when it was made;
+- why it was made;
+- how it was made;
+- for whom it was made;
+- under which categories it was recorded;
+- what is absent from it.
+
+## Output
+
+The Data Setting Checklist. You use it again in [Session 11](11-describe-your-dataset.qmd) on your own dataset.
+
+## Next
+
+[Session 5 — A place for plant data](05-a-place-for-plant-data.qmd) applies the checklist to a real archive.

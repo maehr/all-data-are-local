@@ -1,0 +1,28 @@
+---
+title: 'Session 7 — Statistics knowledge check'
+subtitle: 'Day 2 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** The ten required IMS sections, studied between the two days
+- **Material:** Quiz and IMS self-study notes
+- **Output:** Quiz and correction notes
+:::
+
+## In class
+
+Day 2 starts with a short multiple-choice quiz on the required IMS sections. The quiz checks observations, variables, variable types, population and sample, bar plots, scatterplots, mean, histograms, median, quartiles, and box plots.
+
+We correct the quiz together. We then connect the formal statistical language to Day 1: before we can analyze observations and variables, someone must decide what counts as an observation and a variable.
+
+## Prepare
+
+Read the ten required sections of @cetinkayarundel2024ims, listed in the [assignments](../assignments.qmd). Use the [statistics cheat sheet](../cheat-sheet.qmd) while you read.
+
+## Output
+
+The corrected quiz and your correction notes.
+
+## Next
+
+[Session 8 — Models of local practice I](08-models-of-local-practice-i.qmd) returns to the core text.

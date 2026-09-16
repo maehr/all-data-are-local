@@ -1,0 +1,53 @@
+---
+title: Literature
+subtitle: Required and optional readings
+suppress-bibliography: false
+nocite: |
+  @madali2, @datacarpentry, @seeingtheory, @fdpic
+---
+
+## Core reading
+
+### All Data Are Local
+
+@loukissas2019 is the core text. The book is open access.
+
+Read together in class:
+
+- **Introduction**, pp. 1–12 — [Session 2](sessions/02-datasets-and-data-settings.qmd)
+- **Chapter 1, Local Origins**, pp. 13–26 — [Session 3](sessions/03-taking-data-apart.qmd) and [Session 4](sessions/04-what-does-local-mean.qmd)
+- **Chapter 2, A Place for Plant Data**, pp. 27–54 — [Session 5](sessions/05-a-place-for-plant-data.qmd) and [Session 6](sessions/06-from-world-to-table.qmd)
+- **Chapter 6, Models of Local Practice**, pp. 161–188 — [Session 8](sessions/08-models-of-local-practice-i.qmd) and [Session 9](sessions/09-models-of-local-practice-ii.qmd)
+- **Chapter 7, Local Ends**, pp. 189–196 — [Session 10](sessions/10-local-ends.qmd)
+
+Optional extensions:
+
+- Chapter 3, **Collecting Infrastructures**
+- Chapter 5, **Market, Place, Interface**
+
+### Introduction to Modern Statistics (2e)
+
+@cetinkayarundel2024ims is the statistics text. The book is free online, and the source files are on [GitHub](https://github.com/openintrostat/ims/).
+
+Required self-study sections:
+
+- 1.2.1–1.2.4
+- 2.1.1
+- 4.1
+- 5.1
+- 5.2 — focus on the mean
+- 5.3
+- 5.5
+
+The course uses the second edition, version dated 31 March 2026.
+
+The [assignments](assignments.qmd) page lists these sections with links into the [statistics cheat sheet](cheat-sheet.qmd).
+
+## Optional reading
+
+The [resources](resources.qmd) page describes four optional learning resources. The reference list below holds their full details.
+
+## References
+
+::: {#refs}
+:::

@@ -1,0 +1,31 @@
+---
+title: 'Session 3 — Taking data apart'
+subtitle: 'Day 1 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Chapter 1, *Local Origins*, pp. 13–26
+- **Output:** Notes on how data are made
+:::
+
+## Close reading
+
+Chapter 1, _Local Origins_ [@loukissas2019, 13–26]. [Session 4](04-what-does-local-mean.qmd) reads the same chapter from a different angle.
+
+We read this text together in the session.
+
+## Reading summary
+
+The chapter challenges common ideas about data. Data are plural and heterogeneous, not universal or context-free. Things become data through acts of interpretation, recording, and use. Data are also material: databases, categories, formats, and instruments shape what can be recorded and what can be done with it. Turning something into data always changes it and can remove parts of the original context.
+
+## In class
+
+Students identify the decisions that sit behind a simple table.
+
+## Output
+
+Notes on how data are made.
+
+## Next
+
+[Session 4 — What does local mean?](04-what-does-local-mean.qmd) continues with the same chapter.

@@ -1,8 +1,8 @@
 [project]
-name = "REPO_NAME"
+name = "all-data-are-local"
 version = "0.1.0"
-description = "SHORT_DESCRIPTION"
-authors = [{ name = "FULLNAME", email = "[INSERT CONTACT METHOD]" }]
+description = "Course materials for a two-day block course on critical data literacy in Data Design + Art"
+authors = [{ name = "Moritz Mähr", email = "moritz.maehr@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
@@ -10,6 +10,9 @@ dependencies = []
 [dependency-groups]
 dev = [
     "jupyter>=1.1.1",
+    "matplotlib>=3.9.0",
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
     "papermill>=2.6.0",
     "pytest>=8.0.0",
     "ruff>=0.14.0",
@@ -35,9 +38,6 @@ select = [
 ignore = [
   "E501", # line too long, handled by formatter
 ]
-
-[tool.ruff.lint.isort]
-known-first-party = ["REPO_NAME"]
 
 [tool.ruff.format]
 quote-style = "double"

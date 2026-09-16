@@ -1,8 +1,8 @@
 {
-  "name": "REPO_NAME",
-  "description": "SHORT_DESCRIPTION",
-  "author": "FULLNAME <[INSERT CONTACT METHOD]>",
-  "url": "https://github.com/USERNAME/REPO_NAME/issues",
+  "name": "all-data-are-local",
+  "description": "Course materials for a two-day block course on critical data literacy in Data Design + Art",
+  "author": "Moritz Mähr <moritz.maehr@gmail.com>",
+  "url": "https://github.com/maehr/all-data-are-local/issues",
   "license": "AGPL-3.0",
   "scripts": {
     "check": "prettier --check .",
@@ -11,17 +11,18 @@
     "preview": "uv run quarto preview",
     "site:build": "uv run quarto render --to html",
     "site:archive": "uv run python scripts/release_site_archive.py",
+    "cheatsheet:pdf": "uv run quarto render contents/cheat-sheet.qmd --to typst && mv _site/contents/cheat-sheet.pdf assets/cheat-sheet.pdf",
     "release:prepare": "npm run site:build && npm run site:archive -- --stage",
     "changelog": "npm exec git-cliff -- --config cliff.toml",
     "changelog:unreleased": "npm exec git-cliff -- --config cliff.toml --unreleased --strip all",
-    "lychee-check": "lychee --config .lycheerc.toml './*.md' './*.qmd'"
+    "lychee-check": "lychee --config .lycheerc.toml './*.md' './*.qmd' './contents/**/*.qmd' './documentation/**/*.qmd'"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.2",
-    "@commitlint/config-conventional": "^21.0.2",
-    "@j178/prek": "^0.4.4",
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "@j178/prek": "^0.5.3",
     "git-cliff": "^2.13.1",
-    "prettier": "^3.8.4"
+    "prettier": "^3.9.6"
   },
   "engines": {
     "node": ">=24"

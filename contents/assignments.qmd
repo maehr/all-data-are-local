@@ -1,0 +1,68 @@
+---
+title: Assignments
+subtitle: Work between and after the two course days
+---
+
+## After Day 1
+
+Complete both tasks before **12 October 2026**.
+
+### 1. Read: _Introduction to Modern Statistics (2e)_
+
+Read these sections before Day 2. Each link goes to the matching part of the [statistics cheat sheet](cheat-sheet.qmd).
+
+- [ ] 1.2.1 Observations, variables, and data matrices — [cheat sheet](cheat-sheet.qmd#observations-variables-and-data-frames)
+- [ ] 1.2.2 Types of variables — [cheat sheet](cheat-sheet.qmd#types-of-variables)
+- [ ] 1.2.3 Relationships between variables — [cheat sheet](cheat-sheet.qmd#relationships-between-variables)
+- [ ] 1.2.4 Explanatory and response variables — [cheat sheet](cheat-sheet.qmd#explanatory-and-response-variables)
+- [ ] 2.1.1 Populations and samples — [cheat sheet](cheat-sheet.qmd#population-and-sample)
+- [ ] 4.1 Contingency tables and bar plots — [cheat sheet](cheat-sheet.qmd#categorical-data-contingency-tables-bar-plots)
+- [ ] 5.1 Scatterplots for paired data — [cheat sheet](cheat-sheet.qmd#scatterplots-for-paired-data)
+- [ ] 5.2 Dot plots and the mean — focus on the mean — [cheat sheet](cheat-sheet.qmd#dot-plots-and-the-mean)
+- [ ] 5.3 Histograms and shape — [cheat sheet](cheat-sheet.qmd#histograms-and-distribution-shape)
+- [ ] 5.5 Box plots, quartiles, and the median — [cheat sheet](cheat-sheet.qmd#box-plots-quartiles-and-the-median)
+
+The book is @cetinkayarundel2024ims. It is free online. The [literature](literature.qmd) page holds the full reference.
+
+Use the [statistics cheat sheet](cheat-sheet.qmd) while you read. It shows each chart type with a worked example.
+
+**Prepare for:** a short multiple-choice quiz at the start of Day 2. The quiz checks understanding, not complex calculations.
+
+### 2. Bring your own dataset
+
+Bring one dataset that you can inspect in class.
+
+It can be a CSV, spreadsheet, JSON file, database export, or a clearly structured public dataset. A stable web link is also fine. Choose a dataset that is small enough to explore in one session.
+
+Bring basic source information with it:
+
+- where you found it;
+- who created or published it;
+- what you think it describes.
+
+::: {.callout-warning title="Personal data"}
+Do not bring sensitive personal data unless you have a clear legal and ethical reason to use it. The [resources](resources.qmd#data-protection) page links to the Swiss legal basis.
+:::
+
+## After Day 2
+
+### Describe your dataset
+
+Write a concise description of the dataset you brought to class. Aim for about one page.
+
+Your description must answer these questions:
+
+1. **What is it?** What does one observation represent? What are the main variables and variable types?
+2. **Where does it come from?** Who created it, where, when, and for what purpose?
+3. **How was it made?** How were observations selected, measured, classified, or recorded?
+4. **What changed?** Was the data cleaned, aggregated, converted, or standardized?
+5. **What is missing?** Which people, events, categories, relations, or uncertainties are not visible?
+6. **What is its setting?** Which institutional, social, technical, historical, or geographic context is needed to understand it?
+7. **What can it support?** Give one reasonable use and one claim that the dataset cannot support.
+8. **What should a designer consider?** State one ethical, legal, or design issue that matters when using or presenting the data.
+
+The goal is not to prove that the dataset is good or bad. The goal is to describe what it is, how it became data, and how it can be used responsibly.
+
+::: {.callout-tip title="Where to start"}
+You draft this text in [Session 11](sessions/11-describe-your-dataset.qmd). Questions 1 and 4 use the statistical language from the cheat sheet. Questions 2, 3, 5, and 6 use the Data Setting Checklist from [Session 4](sessions/04-what-does-local-mean.qmd).
+:::

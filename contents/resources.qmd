@@ -1,0 +1,48 @@
+---
+title: Resources
+subtitle: Course material and optional learning resources
+---
+
+## Course resources
+
+### Statistics cheat sheet
+
+Use the [statistics cheat sheet](cheat-sheet.qmd) as a short reference for the IMS self-study and the quiz.
+
+It covers observations, variables, variable types, population and sample, contingency tables, bar plots, scatterplots, mean, histograms, median, quartiles, and box plots.
+
+Every chart on the cheat sheet comes from a worked example, so you can see what each display shows and what it hides.
+
+[Download the cheat sheet as a PDF](../assets/cheat-sheet.pdf).
+
+### Introduction to Modern Statistics (2e)
+
+@cetinkayarundel2024ims is a free online textbook with exercises. The [GitHub repository](https://github.com/openintrostat/ims/) holds the source files.
+
+### All Data Are Local
+
+@loukissas2019 is an open-access book from MIT Press.
+
+## Optional learning resources
+
+### MaDaLi² — Mannheim Data Literacy
+
+@madali2 is bilingual German and English self-study material. No prior knowledge is required. Useful modules include data ethics, data collection, data management, analysis, interpretation, and publication.
+
+### Data Carpentry — Social Sciences
+
+@datacarpentry offers practical lessons on spreadsheet structure, data cleaning with OpenRefine, and data analysis workflows.
+
+### Seeing Theory
+
+@seeingtheory gives interactive visual explanations of probability and statistics. Use it for intuition and optional review.
+
+## Data protection
+
+### Swiss Federal Data Protection and Information Commissioner (FDPIC)
+
+@fdpic publishes the official legal information on Swiss data protection.
+
+Before you use personal data, check two things. Check whether the data contain information about identifiable people. Check whether your planned use is lawful and appropriate.
+
+The [literature](literature.qmd) page lists the full reference for every resource on this page.

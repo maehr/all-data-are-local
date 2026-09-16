@@ -1,0 +1,31 @@
+---
+title: 'Session 8 — Models of local practice I'
+subtitle: 'Day 2 · 60 minutes'
+---
+
+::: {.callout-note title="At a glance"}
+- **Reading:** Loukissas, Chapter 6, *Models of Local Practice*, pp. 161–188
+- **Output:** Design principles
+:::
+
+## Close reading
+
+Chapter 6, _Models of Local Practice_ [@loukissas2019, 161–188]. [Session 9](09-models-of-local-practice-ii.qmd) reads the same chapter from a different angle.
+
+We read this text together in the session.
+
+## Reading summary
+
+Loukissas turns the book's principles into practical models. He argues that data are indexes to local knowledge. Good data practice should therefore show the setting around the data. The chapter uses design, art, and activist projects to show ways of making place, difference, context, and hidden assumptions visible.
+
+## In class
+
+Students identify the practical lessons in the examples. They discuss which lessons are useful for Data Design + Art.
+
+## Output
+
+A set of design principles.
+
+## Next
+
+[Session 9 — Models of local practice II](09-models-of-local-practice-ii.qmd) applies these principles to your own dataset.
