@@ -116,7 +116,7 @@ flowchart TD
 
 ### Numerical variables
 
-Arithmetic on their values has meaningful interpretations.
+Values represent quantities. Differences between them, and summaries such as averages, can be meaningful.
 
 Examples:
 
@@ -343,6 +343,17 @@ Ask whether the distribution of one variable changes depending on the other.
 For example:
 
 > Is task completion distributed similarly for mobile and desktop users?
+
+The two groups hold different numbers of users, so raw counts can mislead. Convert each row to a proportion of its own total:
+
+```text
+Mobile completion:   42 / 60 = 70%
+Desktop completion:  32 / 40 = 80%
+```
+
+::: {.callout-important title="Compare proportions, not only counts"}
+When the group sizes differ, compare proportions within each group. Mobile shows more completions than desktop, 42 against 32, but a smaller share of its own users, 70% against 80%.
+:::
 
 A contingency table gives the raw material for studying relationships between categorical variables.
 
@@ -629,6 +640,8 @@ $$
 \mu.
 $$
 
+This step needs an appropriate sampling design. A sample that is not representative gives a sample mean that can sit far from the population mean, however large the sample is.
+
 ```{mermaid}
 flowchart BT
     A["Sample mean x&#772;"] -->|estimates| B["Population mean &mu;"]
@@ -697,7 +710,7 @@ Use a **histogram** to display the distribution of **one numerical variable**, e
 
 Instead of drawing each observation separately, values are grouped into intervals called **bins**.
 
-Higher bars mean more observations occur in that numerical region.
+For equal-width bins, higher bars mean more observations occur in that numerical region.
 
 The three panels below show **the same 360 visitors**. Only the number of bins changes. Five bins flatten the detail. Sixty bins show noise between the bins as if it were structure. Twelve bins show the two groups of visitors most clearly.
 
@@ -859,10 +872,7 @@ $$
 7.5
 $$
 
-The median is also the **50th percentile**:
-
-- 50% of observations are below it;
-- 50% are above it.
+The median is also the **50th percentile**. It splits the ordered observations into a lower half and an upper half.
 
 ---
 
@@ -907,7 +917,7 @@ Small IQR → middle half are relatively concentrated.
 
 ## Reading a box plot
 
-The two panels below show the same observations. The histogram shows the shape. The box plot compresses that shape into five numbers and the potential outliers.
+The two panels below show the same observations. The histogram shows the shape. The box plot compresses the distribution into quartiles, a median, whiskers, and potential outliers.
 
 ```{python}
 rng = np.random.default_rng(5)
@@ -957,7 +967,7 @@ and therefore contains the **middle 50%** of observations.
 
 The line inside the box is the **median**.
 
-Whiskers extend toward observations outside the box, except observations flagged as unusually distant may be drawn individually.
+Each whisker reaches the most extreme observation that still lies within 1.5 × IQR of the box. Observations beyond those fences are drawn individually as potential outliers.
 
 ---
 
@@ -987,6 +997,50 @@ A point beyond an outlier fence may be:
 
 Investigate it before deciding what to do.
 :::
+
+---
+
+## Compare groups with side-by-side box plots
+
+Draw one box plot for each category, on a shared numerical axis. This is the standard display for **one categorical and one numerical variable**.
+
+```{python}
+rng = np.random.default_rng(7)
+groups = {
+    "Mobile": rng.gamma(4.0, 9.0, 220),
+    "Desktop": rng.gamma(6.0, 9.0, 180),
+    "Tablet": rng.gamma(5.0, 8.0, 120),
+}
+
+fig, ax = plt.subplots(figsize=(6.5, 2.8))
+ax.boxplot(
+    list(groups.values()),
+    tick_labels=list(groups),
+    vert=False,
+    widths=0.55,
+    patch_artist=True,
+    boxprops={"facecolor": FILL, "edgecolor": ACCENT},
+    medianprops={"color": SECOND, "linewidth": 2},
+    whiskerprops={"color": ACCENT},
+    capprops={"color": ACCENT},
+    flierprops={
+        "marker": "o",
+        "markersize": 4,
+        "markerfacecolor": "none",
+        "markeredgecolor": SECOND,
+    },
+)
+ax.invert_yaxis()
+ax.set_xlabel("Viewing time (s)")
+ax.xaxis.grid(True)
+ax.set_axisbelow(True)
+fig.tight_layout()
+plt.show()
+```
+
+Read it by comparing the medians, then the boxes, then the whiskers and the outliers.
+
+A grouped dot plot works as well when each group holds few observations, because it still shows the individual values.
 
 # Bar plot vs. histogram
 
@@ -1022,10 +1076,21 @@ flowchart TD
 
     C --> K["2 categorical"]
     C --> L["2 numerical"]
+    C --> O["1 categorical<br/>+ 1 numerical"]
 
     K --> M["Contingency table"]
     L --> N["Scatterplot"]
+    O --> P["Side-by-side box plots<br/>or grouped dot plot"]
 ```
+
+For one categorical and one numerical variable, ask:
+
+> **How does the numerical distribution differ across the categories?**
+
+For example:
+
+- Does viewing time differ by device type?
+- Does completion time differ across task categories?
 
 # Fast interpretation checklist
 
@@ -1042,7 +1107,7 @@ When you see a visualization, ask:
 9. **Are there clusters, gaps, or unusual observations?**
 10. **Is the chart showing association, or is someone claiming causation?**
 
-# Five formulas / definitions worth remembering
+# Five formulas, symbols, and definitions worth remembering
 
 ### Sample mean
 
@@ -1083,13 +1148,14 @@ $$
 | Situation | Main idea |
 |---|---|
 | Dataset | rows = observations; columns = variables |
-| Numerical variable | arithmetic is meaningful |
+| Numerical variable | values are quantities; differences and averages can be meaningful |
 | Categorical variable | values represent groups |
 | Discrete | countable numerical values |
 | Continuous | measured along a continuum |
 | Population | full group you want to understand |
 | Sample | observations you actually have |
 | Two categorical variables | contingency table |
+| One categorical + one numerical variable | side-by-side box plots |
 | One categorical variable | bar plot |
 | Two numerical variables | scatterplot |
 | Small numerical dataset | dot plot |
