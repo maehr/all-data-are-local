@@ -13,7 +13,7 @@ This repository holds the course website for **All Data Are Local: Introduction 
 The course pages in `contents/` come from source material that the instructor wrote.
 
 - Do not invent a reading, a page number, a session output, or a learning outcome.
-- Keep the terms **data set**, **data setting**, and **local** fixed.
+- Keep the terms **data setting** and **local** fixed. Write **dataset** as one word.
 - Ask the instructor before you change a date, a reading, or an assessment rule.
 
 ## 3. This repository contains no R

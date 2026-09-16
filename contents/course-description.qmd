@@ -19,7 +19,7 @@ Students also bring their own dataset. They use it to connect statistical descri
 
 After the course, students can:
 
-- distinguish a **data set** from its **data setting**;
+- distinguish a **dataset** from its **data setting**;
 - explain how observations and categories become data;
 - identify the origin, purpose, limits, and missing context of a dataset;
 - use basic statistical terms to describe a dataset;

@@ -22,7 +22,7 @@ flowchart LR
 **5 October 2026**
 
 1. **[What counts as data?](sessions/01-what-counts-as-data.qmd)** — We compare objects, traces, records, and tables, and write a working definition of data.
-2. **[Data sets and data settings](sessions/02-data-sets-and-data-settings.qmd)** — We read the Introduction and turn the idea of a data setting into a first set of questions.
+2. **[Datasets and data settings](sessions/02-datasets-and-data-settings.qmd)** — We read the Introduction and turn the idea of a data setting into a first set of questions.
 3. **[Taking data apart](sessions/03-taking-data-apart.qmd)** — We read Chapter 1 and take notes on how data are made.
 4. **[What does local mean?](sessions/04-what-does-local-mean.qmd)** — We read Chapter 1 again and build the Data Setting Checklist.
 5. **[A place for plant data](sessions/05-a-place-for-plant-data.qmd)** — We read Chapter 2 and map the relations between data and place.
