@@ -1,0 +1,11 @@
+/*-- scss:defaults --*/
+
+// Callout colours for the greyscale brand in _brand.yml.
+// Quarto takes these from $blue, $green, $yellow, $orange, and $red, so a
+// brand palette alone does not reach them. Five steps of grey keep the five
+// callout types apart. The Quarto callout icons carry the meaning.
+$callout-color-note: #8f8d88 !default;
+$callout-color-tip: #6f6d68 !default;
+$callout-color-caution: #52514e !default;
+$callout-color-warning: #33322f !default;
+$callout-color-important: #0b0b0b !default;

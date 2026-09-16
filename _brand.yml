@@ -7,3 +7,56 @@ meta:
     Course materials for a two-day block course on critical data literacy in Data Design + Art
 
 # Go to https://quarto.org/docs/authoring/brand.html to learn more about multiformat branding with brand.yml
+
+color:
+  palette:
+    ink: '#0b0b0b'
+    graphite: '#33322f'
+    slate: '#52514e'
+    silver: '#8f8d88'
+    mist: '#dcdbd6'
+    haze: '#f2f1ee'
+    paper: '#ffffff'
+  foreground: ink
+  background: paper
+  primary: ink
+  secondary: slate
+  tertiary: silver
+  light: haze
+  dark: ink
+  # Callouts stay greyscale. Four distinct steps keep them apart, and the
+  # Quarto callout icons carry the meaning.
+  info: slate
+  success: graphite
+  warning: silver
+  danger: ink
+
+typography:
+  fonts:
+    - family: IBM Plex Sans
+      source: google
+      weight: [400, 500, 600, 700]
+      style: [normal, italic]
+    - family: IBM Plex Serif
+      source: google
+      weight: [400, 600]
+      style: [normal, italic]
+    - family: IBM Plex Mono
+      source: google
+      weight: [400, 600]
+      style: [normal, italic]
+  base:
+    family: IBM Plex Sans
+    size: 1.05rem
+    line-height: 1.6
+  headings:
+    family: IBM Plex Sans
+    weight: 600
+    line-height: 1.25
+    color: ink
+  monospace:
+    family: IBM Plex Mono
+    size: 0.9em
+  link:
+    color: ink
+    decoration: underline

@@ -13,9 +13,12 @@ execute:
 import matplotlib.pyplot as plt
 import numpy as np
 
-ACCENT = "#2a78d6"
-SECOND = "#eb6834"
-FILL = "#cde2fb"
+# Greyscale, to match the site brand in _brand.yml.
+# ACCENT draws the bulk marks. SECOND draws the emphasis line on top of them,
+# so it must stay darker than ACCENT.
+ACCENT = "#6f6d68"
+SECOND = "#0b0b0b"
+FILL = "#dcdbd6"
 INK = "#0b0b0b"
 MUTED = "#52514e"
 GRID = "#dcdbd6"
@@ -598,9 +601,9 @@ for ax, times in zip(axes, [[8, 9, 10, 13, 15], [8, 9, 10, 13, 60]]):
     pad = (max(times) - min(times)) * 0.02
     ax.scatter(times, [1] * len(times), s=70, color=ACCENT, zorder=3)
     ax.axvline(mean, color=SECOND, lw=2)
-    ax.axvline(median, color=MUTED, lw=2, ls="--")
+    ax.axvline(median, color=INK, lw=2, ls=(0, (6, 3)))
     ax.text(mean + pad, 1.5, f"mean {mean:.1f}", color=SECOND, ha="left", fontsize=9)
-    ax.text(median - pad, 0.4, f"median {median:.1f}", color=MUTED, ha="right", fontsize=9)
+    ax.text(median - pad, 0.4, f"median {median:.1f}", color=INK, ha="right", fontsize=9)
     ax.set_ylim(0.2, 1.8)
     ax.set_yticks([])
     ax.spines["left"].set_visible(False)
@@ -776,7 +779,7 @@ Often:
 
 Long tail points toward **lower values**.
 
-Compare the three shapes. The orange line marks the mean. The dashed grey line marks the median. Skew pulls the mean into the tail and leaves the median behind.
+Compare the three shapes. The solid line marks the mean. The dashed line marks the median. Skew pulls the mean into the tail and leaves the median behind.
 
 ```{python}
 rng = np.random.default_rng(11)
@@ -790,7 +793,7 @@ fig, axes = plt.subplots(1, 3, figsize=(9, 2.8))
 for ax, (name, values) in zip(axes, samples.items()):
     ax.hist(values, bins=30, color=ACCENT)
     ax.axvline(np.mean(values), color=SECOND, lw=2, label="mean")
-    ax.axvline(np.median(values), color=MUTED, lw=2, ls="--", label="median")
+    ax.axvline(np.median(values), color=INK, lw=2, ls=(0, (6, 3)), label="median")
     ax.set_title(name)
     ax.set_yticks([])
     ax.spines["left"].set_visible(False)
@@ -955,7 +958,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-The orange line is the median. The circles beyond the whisker are potential outliers.
+The black line is the median. The open circles beyond the whisker are potential outliers.
 
 The box runs from:
 
