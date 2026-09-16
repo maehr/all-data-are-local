@@ -15,46 +15,32 @@ Every chart on the cheat sheet comes from a worked example, so you can see what 
 
 ### Introduction to Modern Statistics (2e)
 
-Free online textbook and exercises:
-
-<https://openintrostat.github.io/ims/>
-
-GitHub source:
-
-<https://github.com/openintrostat/ims/>
+@cetinkayarundel2024ims is a free online textbook with exercises. The [GitHub repository](https://github.com/openintrostat/ims/) holds the source files.
 
 ### All Data Are Local
 
-Open-access book from MIT Press:
-
-<https://direct.mit.edu/books/oa-monograph/4323/All-Data-Are-LocalThinking-Critically-in-a-Data>
+@loukissas2019 is an open-access book from MIT Press.
 
 ## Optional learning resources
 
 ### MaDaLi² — Mannheim Data Literacy
 
-Bilingual German and English self-study material. No prior knowledge is required. Useful modules include data ethics, data collection, data management, analysis, interpretation, and publication.
-
-<https://www.uni-mannheim.de/en/about/teaching/teaching-projects/data-literacy/e-learning-course-mannheim-data-literacy-madali2/>
+@madali2 is bilingual German and English self-study material. No prior knowledge is required. Useful modules include data ethics, data collection, data management, analysis, interpretation, and publication.
 
 ### Data Carpentry — Social Sciences
 
-Practical lessons on spreadsheet structure, data cleaning with OpenRefine, and data analysis workflows.
-
-<https://datacarpentry.org/lessons/>
+@datacarpentry offers practical lessons on spreadsheet structure, data cleaning with OpenRefine, and data analysis workflows.
 
 ### Seeing Theory
 
-Interactive visual explanations of probability and statistics. Use it for intuition and optional review.
-
-<https://seeing-theory.brown.edu/>
+@seeingtheory gives interactive visual explanations of probability and statistics. Use it for intuition and optional review.
 
 ## Data protection
 
 ### Swiss Federal Data Protection and Information Commissioner (FDPIC)
 
-Official legal information on Swiss data protection:
-
-<https://www.edoeb.admin.ch/en/legal-basis-data-protection>
+@fdpic publishes the official legal information on Swiss data protection.
 
 Before you use personal data, check two things. Check whether the data contain information about identifiable people. Check whether your planned use is lawful and appropriate.
+
+The [literature](literature.qmd) page lists the full reference for every resource on this page.

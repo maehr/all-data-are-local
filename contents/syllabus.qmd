@@ -7,7 +7,7 @@ subtitle: 12 sessions across two days
 
 The course runs on two days, with six hours of teaching on each day. Each day holds six sessions of 60 minutes. We work with short input, close reading, discussion, exercises, peer feedback, and self-study.
 
-The core text is Yanni Alexander Loukissas, _All Data Are Local_. The statistics text is Mine Çetinkaya-Rundel and Johanna Hardin, _Introduction to Modern Statistics (2e)_.
+The core text is Yanni Alexander Loukissas, _All Data Are Local_ [-@loukissas2019]. The statistics text is Mine Çetinkaya-Rundel and Johanna Hardin, _Introduction to Modern Statistics (2e)_ [-@cetinkayarundel2024ims].
 
 We read Loukissas together in the sessions. You do not need to read him beforehand. You study the statistics sections on your own, between the two days.
 

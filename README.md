@@ -41,6 +41,7 @@ The repository holds every public course page. Students read the published websi
 | `contents/`                  | Course pages: description, syllabus, assignments, and resources |
 | `contents/sessions/`         | One page for each of the 12 sessions                            |
 | `contents/cheat-sheet.qmd`   | Statistics cheat sheet, with figures built by static Python     |
+| `references.bib`             | BibTeX entries for every cited work                             |
 | `documentation/`             | Guide for teachers who reuse the course                         |
 | `assets/`                    | Images and media                                                |
 | `data/`                      | Datasets, if the course publishes any                           |

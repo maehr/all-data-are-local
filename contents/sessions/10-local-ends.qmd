@@ -4,13 +4,13 @@ subtitle: 'Day 2 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Close reading:** Loukissas, Chapter 7, *Local Ends*, pp. 189–196
+- **Reading:** Loukissas, Chapter 7, *Local Ends*, pp. 189–196
 - **Output:** Ethical and practical criteria
 :::
 
 ## Close reading
 
-Loukissas, Chapter 7, _Local Ends_, pp. 189–196.
+Chapter 7, _Local Ends_ [@loukissas2019, 189–196].
 
 We read this text together in the session.
 

@@ -22,7 +22,7 @@ Read these sections before Day 2. Each link goes to the matching part of the [st
 - [ ] 5.3 Histograms and shape — [cheat sheet](cheat-sheet.qmd#histograms-and-distribution-shape)
 - [ ] 5.5 Box plots, quartiles, and the median — [cheat sheet](cheat-sheet.qmd#box-plots-quartiles-and-the-median)
 
-The book is free online at <https://openintrostat.github.io/ims/>.
+The book is @cetinkayarundel2024ims. It is free online. The [literature](literature.qmd) page holds the full reference.
 
 Use the [statistics cheat sheet](cheat-sheet.qmd) while you read. It shows each chart type with a worked example.
 

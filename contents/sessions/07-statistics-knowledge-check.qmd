@@ -16,7 +16,7 @@ We correct the quiz together. We then connect the formal statistical language to
 
 ## Prepare
 
-Read the ten required sections listed in the [assignments](../assignments.qmd). Use the [statistics cheat sheet](../cheat-sheet.qmd) while you read.
+Read the ten required sections of @cetinkayarundel2024ims, listed in the [assignments](../assignments.qmd). Use the [statistics cheat sheet](../cheat-sheet.qmd) while you read.
 
 ## Output
 

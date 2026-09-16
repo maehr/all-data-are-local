@@ -17,7 +17,9 @@ The course content is available under [CC BY 4.0](/LICENSE-CCBY.md). You can cop
 - `contents/resources.qmd` — course material and optional learning resources
 - `contents/cheat-sheet.qmd` — the statistics cheat sheet
 - `contents/about.qmd` — format, teaching approach, and contact
+- `references.bib` — BibTeX entries for every cited work
 - `_quarto.yml` — navigation, theme, and site metadata
+- `_brand.yml` and `theme.scss` — the greyscale palette, the IBM Plex fonts, and the callout colours
 
 Each session page follows the same structure: an at-a-glance table, the reading, a reading summary, the in-class work, and the output.
 

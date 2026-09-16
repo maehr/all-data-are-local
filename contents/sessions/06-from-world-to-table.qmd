@@ -4,13 +4,13 @@ subtitle: 'Day 1 · 60 minutes'
 ---
 
 ::: {.callout-note title="At a glance"}
-- **Close reading:** Loukissas, Chapter 2, *A Place for Plant Data*, pp. 27–54
+- **Reading:** Loukissas, Chapter 2, *A Place for Plant Data*, pp. 27–54
 - **Output:** Small data-making exercise
 :::
 
 ## Close reading
 
-Loukissas, Chapter 2, _A Place for Plant Data_, pp. 27–54. [Session 5](05-a-place-for-plant-data.qmd) reads the same chapter from a different angle.
+Chapter 2, _A Place for Plant Data_ [@loukissas2019, 27–54]. [Session 5](05-a-place-for-plant-data.qmd) reads the same chapter from a different angle.
 
 We read this text together in the session.
 

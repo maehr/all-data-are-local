@@ -19,6 +19,7 @@ The course content lives in `contents/`. The other directories follow the advanc
 | --------------------- | -------------------------------------------------- |
 | `contents/`           | Course pages: description, syllabus, and resources |
 | `contents/sessions/`  | One page for each of the 12 sessions               |
+| `references.bib`      | BibTeX entries for every cited work                |
 | `documentation/`      | Guidance for teachers who reuse the course         |
 | `assets/`             | Images and media                                   |
 | `data/`               | Datasets, if the course publishes any              |
@@ -34,12 +35,25 @@ Put new files in the directory that matches their purpose.
 The course pages come from source material that the instructor wrote. Accuracy matters more than style.
 
 - Do not invent a reading, a page number, a session output, or a learning outcome.
-- Keep the terms of the core text fixed: **data set**, **data setting**, and **local**. Never replace one with a synonym.
+- Keep the terms of the core text fixed: **data setting** and **local**. Never replace one with a synonym.
+- Write **dataset** as one word in course prose. The core text writes it as two words, but the site uses one.
 - Name the two course texts the same way on every page. The core text is Loukissas, _All Data Are Local_. The statistics text is _Introduction to Modern Statistics (2e)_.
-- Each session page states the day, the duration, the reading, and the output.
+- Each session page states the day, the duration, the reading, and the output. The subtitle carries the day and the duration. The at-a-glance callout carries the reading and the output.
 - Ask the instructor before you change a date, a reading, or an assessment rule.
 
-## 4. The Cheat Sheet
+## 4. The Bibliography
+
+`references.bib` holds every work the course cites. `_quarto.yml` loads it for the whole site.
+
+- Cite a work with `@key`, or with `[-@key]` when the sentence already names the author.
+- Add a page locator like `[@loukissas2019, 13–26]`. Pandoc prints the page numbers.
+- `suppress-bibliography: true` in `_quarto.yml` keeps the reference list off every page.
+- `contents/literature.qmd` sets `suppress-bibliography: false` and holds the only `::: {#refs}` div.
+- Add an optional resource to the `nocite` list in `contents/literature.qmd`, so it appears in the list.
+- The site uses Chicago author-date, which is Quarto's default. Do not add a CSL file.
+- Verify a DOI, a year, and an author against the publisher before you write a new entry. Omit a field that you cannot verify.
+
+## 5. The Cheat Sheet
 
 `contents/cheat-sheet.qmd` builds its figures with static Python.
 
@@ -50,7 +64,7 @@ The course pages come from source material that the instructor wrote. Accuracy m
 - Prefer a Mermaid diagram over a Python figure for a flow, a tree, or a set of relations.
 - Look at the rendered page after a change. Check that no axis label is clipped.
 
-## 5. Writing Style
+## 6. Writing Style
 
 Write prose in Simplified Technical English.
 
@@ -62,7 +76,7 @@ Write prose in Simplified Technical English.
 
 These rules do not apply to source code or to quoted material.
 
-## 6. Formatting and Linting
+## 7. Formatting and Linting
 
 - Run `npm run format` before a commit. The command applies Prettier.
 - Run `npm run check` to verify the formatting without a write.
@@ -71,14 +85,14 @@ These rules do not apply to source code or to quoted material.
 
 This repository contains no R code. Do not add an R toolchain, an `renv` lockfile, or an R lint step.
 
-## 7. Commits and Changelog
+## 8. Commits and Changelog
 
 - Use `git commit -m "type: subject"` with a valid Conventional Commit subject. Commitlint enforces this through Prek.
 - Make one focused change per commit, so `git-cliff` can reuse the subject line.
 - Run `npm run changelog:unreleased` for a compact preview.
 - Run `npm run changelog` after a commit, then curate the result into `CHANGELOG.md`.
 
-## 8. Dependency Management
+## 9. Dependency Management
 
 ### Node.js
 
@@ -92,7 +106,7 @@ This repository contains no R code. Do not add an R toolchain, an `renv` lockfil
 2. Run `uv sync` to refresh `uv.lock`.
 3. Commit both files.
 
-## 9. Testing and CI
+## 10. Testing and CI
 
 - `npm run check` verifies the formatting.
 - `uv run ruff check` lints Python code.
@@ -101,14 +115,14 @@ This repository contains no R code. Do not add an R toolchain, an `renv` lockfil
 - `npm run lychee-check` finds dead links.
 - Confirm that the workflows in `.github/workflows/` still pass after a change.
 
-## 10. GitHub and Publishing
+## 11. GitHub and Publishing
 
 - The workflow `.github/workflows/quarto-publish.yml` deploys the site from `main`.
 - In repository settings, Pages must use the source **GitHub Actions**.
 - Run a production deployment outside an agent session, unless the maintainer authorizes it.
 - Use the `workflow_dispatch` trigger only to rerun a failed deployment.
 
-## 11. Zenodo and DOI
+## 12. Zenodo and DOI
 
 - Zenodo archives each GitHub release and mints a DOI.
 - Run `npm run release:prepare -- --tag vX.Y.Z` before a release. Commit the generated `release-artifacts/site-vX.Y.Z.zip`.
@@ -116,7 +130,7 @@ This repository contains no R code. Do not add an R toolchain, an `renv` lockfil
 - Use the concept DOI in `CITATION.cff`, because it stays stable across releases.
 - `TODO.md` lists the open setup tasks.
 
-## 12. Commands Recap
+## 13. Commands Recap
 
 | Command                                   | Purpose                                         |
 | ----------------------------------------- | ----------------------------------------------- |

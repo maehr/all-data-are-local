@@ -24,9 +24,9 @@ flowchart TD
 
 Both days hold six sessions of 60 minutes, so the course gives 12 hours of contact time. It belongs to the module PLAY 1 / Data Literacy in Data Design + Art. Dr. sc. Moritz Mähr teaches it.
 
-The core text is Yanni Alexander Loukissas's _All Data Are Local_. We read the Introduction and Chapters 1 and 2 on Day 1. We read Chapters 6 and 7 on Day 2.
+The core text is Yanni Alexander Loukissas's _All Data Are Local_ [-@loukissas2019]. We read the Introduction and Chapters 1 and 2 on Day 1. We read Chapters 6 and 7 on Day 2.
 
-Between the two course days, you study selected sections of _Introduction to Modern Statistics (2e)_. These sections give you the basic statistical language for observations, variables, samples, distributions, and common charts. Day 2 starts with a short multiple-choice quiz on this material.
+Between the two course days, you study selected sections of _Introduction to Modern Statistics (2e)_ [-@cetinkayarundel2024ims]. These sections give you the basic statistical language for observations, variables, samples, distributions, and common charts. Day 2 starts with a short multiple-choice quiz on this material.
 
 You also bring your own dataset. You use it to connect statistical description with critical data practice.
 
