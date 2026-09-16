@@ -24,12 +24,12 @@ color:
   tertiary: silver
   light: haze
   dark: ink
-  # Callouts stay greyscale. Four distinct steps keep them apart, and the
-  # Quarto callout icons carry the meaning.
-  info: slate
-  success: graphite
-  warning: silver
-  danger: ink
+  # Solarized accents, so a button or a badge agrees with the callout of the
+  # same name. theme.scss sets the matching callout colours.
+  info: '#268bd2'
+  success: '#859900'
+  warning: '#b58900'
+  danger: '#dc322f'
 
 typography:
   fonts:
