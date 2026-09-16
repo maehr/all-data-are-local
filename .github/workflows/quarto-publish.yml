@@ -59,6 +59,33 @@ jobs:
       - name: Run ty check
         run: uv run ty check
 
+  check-pdf:
+    name: Check the cheat sheet PDF
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6.0.3
+        with:
+          # `git log -- <path>` needs the history that touches the path.
+          fetch-depth: 0
+
+      - name: Compare the PDF against its source
+        run: |
+          src=$(git log -1 --format=%ct -- contents/cheat-sheet.qmd)
+          pdf=$(git log -1 --format=%ct -- assets/cheat-sheet.pdf)
+          if [ -z "$pdf" ]; then
+            echo "::error::assets/cheat-sheet.pdf is missing. Run npm run cheatsheet:pdf."
+            exit 1
+          fi
+          if [ "$src" -gt "$pdf" ]; then
+            echo "::error::assets/cheat-sheet.pdf is older than contents/cheat-sheet.qmd. Run npm run cheatsheet:pdf and commit the result."
+            exit 1
+          fi
+          echo "The PDF is current."
+
   build-optimize:
     name: Build, Optimize, and Upload Artifacts
     runs-on: ubuntu-latest
@@ -118,7 +145,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: [lint, lint-python, build-optimize]
+    needs: [lint, lint-python, check-pdf, build-optimize]
     if: github.event_name != 'pull_request'
 
     steps:

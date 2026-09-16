@@ -16,6 +16,7 @@ The course content is available under [CC BY 4.0](../LICENSE-CCBY.md). You can c
 - `contents/literature.qmd` — the two course texts and the required sections
 - `contents/resources.qmd` — course material and optional learning resources
 - `contents/cheat-sheet.qmd` — the statistics cheat sheet
+- `assets/cheat-sheet.pdf` — the cheat sheet as a PDF, built by `npm run cheatsheet:pdf`
 - `contents/about.qmd` — format, teaching approach, and contact
 - `references.bib` — BibTeX entries for every cited work
 - `_quarto.yml` — navigation, theme, and site metadata

@@ -48,4 +48,6 @@ Run these commands before you push.
 | `uv run ruff check`    | Lint Python code          |
 | `uv run ty check`      | Type check Python code    |
 
+Run `npm run cheatsheet:pdf` and commit `assets/cheat-sheet.pdf` after any cheat sheet change. CI fails when the PDF falls behind its source.
+
 Look at `contents/cheat-sheet.qmd` in the preview after a change. Check that every figure draws and that no axis label is clipped.

@@ -13,6 +13,8 @@ project:
     - '!CLAUDE.md'
     - '!TODO.md'
     - '!README.md'
+  resources:
+    - 'assets/**'
 
 website:
   title: All Data Are Local

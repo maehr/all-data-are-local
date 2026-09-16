@@ -64,6 +64,17 @@ The course pages come from source material that the instructor wrote. Accuracy m
 - Prefer a Mermaid diagram over a Python figure for a flow, a tree, or a set of relations.
 - Look at the rendered page after a change. Check that no axis label is clipped.
 
+### The PDF
+
+The cheat sheet also publishes as a PDF, which Typst builds. The PDF is committed, because the
+Mermaid diagrams need headless Chrome and the GitHub runner has none.
+
+- Run `npm run cheatsheet:pdf` after **every** change to `contents/cheat-sheet.qmd`.
+- Commit `assets/cheat-sheet.pdf` in the same commit as the change.
+- The `check-pdf` job compares the last commit date of each file. It fails when the PDF is older.
+- Open the PDF and check the five Mermaid diagrams. A diagram that is wider than the text column is
+  scaled down by a `#show image` rule in the Typst header. Confirm the labels stay readable.
+
 ## 6. Writing Style
 
 Write prose in Simplified Technical English.
@@ -138,6 +149,7 @@ This repository contains no R code. Do not add an R toolchain, an `renv` lockfil
 | `npm run check`                           | Verify the formatting                           |
 | `npm run format`                          | Apply Prettier formatting                       |
 | `npm run lychee-check`                    | Check links                                     |
+| `npm run cheatsheet:pdf`                  | Rebuild the committed cheat sheet PDF           |
 | `uv run ruff check`                       | Lint Python code                                |
 | `uv run ruff format`                      | Format Python code                              |
 | `uv run ty check`                         | Type check Python code                          |

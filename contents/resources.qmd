@@ -13,6 +13,8 @@ It covers observations, variables, variable types, population and sample, contin
 
 Every chart on the cheat sheet comes from a worked example, so you can see what each display shows and what it hides.
 
+[Download the cheat sheet as a PDF](../assets/cheat-sheet.pdf).
+
 ### Introduction to Modern Statistics (2e)
 
 @cetinkayarundel2024ims is a free online textbook with exercises. The [GitHub repository](https://github.com/openintrostat/ims/) holds the source files.

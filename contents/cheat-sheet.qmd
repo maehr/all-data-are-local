@@ -1,8 +1,49 @@
 ---
 title: Statistics Cheat Sheet
-subtitle: 'Data, distributions, and visual interpretation · Data Design + Art'
+subtitle: 'Data, distributions, and visual interpretation'
+author:
+  - name: Moritz Mähr
+    orcid: 0000-0002-1367-1618
+    email: moritz.maehr@gmail.com
+    affiliation:
+      - name: Digital Humanities, University of Bern
+date: 2026-10-05
+date-format: long
+license: CC BY 4.0
 toc-depth: 2
-page-layout: full
+format:
+  html: default
+  typst:
+    mainfont: IBM Plex Sans
+    monofont: IBM Plex Mono
+    papersize: a4
+    margin:
+      x: 2cm
+      y: 2cm
+    # The neutral Mermaid theme keeps the diagrams greyscale in print. Quarto
+    # styles them from CSS variables in HTML, which the rasteriser cannot read.
+    mermaid:
+      theme: neutral
+    # Quarto rasterises Mermaid at its natural pixel size and writes that width
+    # into the Typst source. Two of the five diagrams are wider than an A4
+    # column and run off the page. Shrink any image that does not fit, and
+    # leave the rest alone. The matplotlib figures carry no explicit width, so
+    # Typst already fits them to the text measure.
+    include-in-header:
+      - text: |
+          #show image: it => layout(size => {
+            if it.width != auto and it.width > size.width {
+              let f = size.width / it.width * 100%
+              scale(x: f, y: f, origin: top + left, reflow: true, it)
+            } else { it }
+          })
+# CI renders HTML only, so Quarto's automatic PDF link would 404. The
+# committed PDF is offered through other-links instead. See AGENTS.md.
+format-links: false
+other-links:
+  - text: Cheat sheet as PDF
+    href: ../assets/cheat-sheet.pdf
+    icon: file-earmark-pdf
 execute:
   echo: false
   warning: false
