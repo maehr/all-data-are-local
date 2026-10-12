@@ -15,6 +15,10 @@ Every chart on the cheat sheet comes from a worked example, so you can see what 
 
 [Download the cheat sheet as a PDF](../assets/cheat-sheet.pdf).
 
+### Statistics quiz slides
+
+The [quiz slides](slides/07-statistics-quiz.qmd) hold the 14 questions from [Session 7](sessions/07-statistics-knowledge-check.qmd). Each answer slide gives the reason and links to the matching part of the cheat sheet. Use them to review the quiz after Day 2.
+
 ### Introduction to Modern Statistics (2e)
 
 @cetinkayarundel2024ims is a free online textbook with exercises. The [GitHub repository](https://github.com/openintrostat/ims/) holds the source files.

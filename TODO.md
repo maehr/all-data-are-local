@@ -33,7 +33,7 @@ The course site is built and the template placeholders are resolved. The tasks b
 ### Course content
 
 - [x] `[Manual]` Confirm the subtitle of the statistics cheat sheet. Done. The [HSLU programme page](https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/degree-programmes/bachelor/data-design-and-art/) names the programme **Bachelor in Data Design + Art** at the **Lucerne School of Design, Film and Art**. The degree awarded is **Bachelor of Arts in Visual Communication with a specialization in Data Design + Art**. The source file's "BA Arts and Information Design" is stale. The site keeps **Data Design + Art**.
-- [ ] `[Manual]` Write the multiple-choice quiz for [Session 7](contents/sessions/07-statistics-knowledge-check.qmd). No source material exists for it yet.
+- [ ] `[Manual]` Review the draft quiz deck for [Session 7](contents/sessions/07-statistics-knowledge-check.qmd) in `contents/slides/07-statistics-quiz.qmd`. Merge it after Day 2.
 
 ## Validation
 

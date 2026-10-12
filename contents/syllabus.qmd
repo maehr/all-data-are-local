@@ -54,7 +54,7 @@ Use the [statistics cheat sheet](cheat-sheet.qmd) while you read.
 
 **12 October 2026**
 
-7. **[Statistics knowledge check](sessions/07-statistics-knowledge-check.qmd)** — We write the quiz, correct it together, and connect it to Day 1.
+7. **[Statistics knowledge check](sessions/07-statistics-knowledge-check.qmd)** — We write the quiz, correct it together with the [quiz slides](slides/07-statistics-quiz.qmd), and connect it to Day 1.
 8. **[Models of local practice I](sessions/08-models-of-local-practice-i.qmd)** — We read Chapter 6 and draw design principles from its examples.
 9. **[Models of local practice II](sessions/09-models-of-local-practice-ii.qmd)** — We apply those principles to the dataset each student brought.
 10. **[Local ends](sessions/10-local-ends.qmd)** — We read Chapter 7 and write ethical and practical criteria.

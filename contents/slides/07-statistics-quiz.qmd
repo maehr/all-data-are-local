@@ -1,0 +1,410 @@
+---
+title: Statistics knowledge check
+subtitle: Session 7 · Day 2
+format:
+  revealjs:
+    slide-number: true
+    hash-type: number
+    transition: none
+    center: false
+    footer: All Data Are Local · Session 7
+    include-in-header:
+      text: |
+        <style>
+          /* _brand.yml sets 1.05rem for the website, which is too small on a slide. */
+          html:root { --r-main-font-size: 28px; }
+          .reveal .slides section { line-height: 1.35; }
+          .reveal .slides section p { margin: 0.4em 0; }
+          .reveal .answer p:first-of-type strong { color: #859900; }
+          .reveal .note { font-size: 0.6em; color: #8f8d88; }
+          /* The theme's ol[type="a"] rule also matches type="A". Force capitals on the option lists. */
+          .reveal .slides ol[type] { list-style-type: upper-alpha; margin-top: 0.3em; }
+          .reveal .slides ol[type] li { margin-bottom: 0.15em; }
+          .reveal table { font-size: 0.8em; margin: 0.3em auto; }
+          .reveal table th, .reveal table td { padding: 0.15em 0.6em; }
+        </style>
+---
+
+## How this works
+
+- 14 questions on the ten required sections of _Introduction to Modern Statistics (2e)_.
+- Each question starts with one case from everyday life.
+- Choose one of the four options. Write it down.
+- The next slide shows the answer and the reason.
+
+::: note
+Some cases use invented numbers. The slide says so.
+:::
+
+## Q1 · Your Spotify data {.question}
+
+You download your Spotify data. The streaming history opens as a table:
+
+| endTime          | artistName | trackName | msPlayed |
+| ---------------- | ---------- | --------- | -------: |
+| 2026-03-14 22:41 | Charli xcx | 360       |   133000 |
+| 2026-03-14 22:44 | Charli xcx | Apple     |   151000 |
+| 2026-03-15 07:12 | Doechii    | Anxiety   |    41000 |
+
+What is **one observation** in this table?
+
+A) One artist
+B) One stream: one play of a track at one time
+C) The variable `msPlayed`
+D) Your whole listening year
+
+## Q1 · Answer {.answer}
+
+**B. One stream: one play of a track at one time.**
+
+Each row is one observation. Here a row records one play. The same artist and the same track can appear in many rows. `msPlayed` is a variable, a column. Ask first: _What does one row mean?_
+
+::: note
+IMS 1.2.1 · [Cheat sheet: observations, variables, and data frames](../cheat-sheet.qmd#observations-variables-and-data-frames)
+:::
+
+## Q2 · Delivery orders {.question}
+
+A food delivery app exports your orders:
+
+| postcode | price_chf | minutes |
+| -------: | --------: | ------: |
+|     8001 |     24.50 |      28 |
+|     3012 |     18.90 |      35 |
+|     4051 |     31.00 |      22 |
+
+Which variable is **categorical**, although it contains numbers?
+
+A) `price_chf`
+B) `minutes`
+C) `postcode`
+D) None of them: numbers are always numerical
+
+::: note
+Invented numbers.
+:::
+
+## Q2 · Answer {.answer}
+
+**C. `postcode`.**
+
+A postcode is a label for a place. 8001 is Zürich, 3012 is Bern, 4051 is Basel. The mean of these three postcodes means nothing. Ask: _Does arithmetic on these values mean anything?_ If not, treat the variable as categorical.
+
+::: note
+IMS 1.2.2 · [Cheat sheet: categorical variables](../cheat-sheet.qmd#categorical-variables)
+:::
+
+## Q3 · Clothing sizes {.question}
+
+You filter an online shop by size: XS, S, M, L, XL.
+
+What type of variable is _size_?
+
+A) Numerical, continuous
+B) Numerical, discrete
+C) Categorical, nominal
+D) Categorical, ordinal
+
+## Q3 · Answer {.answer}
+
+**D. Categorical, ordinal.**
+
+The sizes are categories with a natural order: XS < S < M < L < XL. You cannot compute "M minus S". The steps between sizes are not equal distances. A colour filter (black, white, green) would be nominal: it has no order.
+
+::: note
+IMS 1.2.2 · [Cheat sheet: nominal vs. ordinal](../cheat-sheet.qmd#nominal-vs.-ordinal)
+:::
+
+## Q4 · Screen time and sleep {.question}
+
+Your class fills in a survey. A scatterplot shows _daily screen time_ on the x-axis and _hours of sleep_ on the y-axis. Students with more screen time tend to report less sleep.
+
+Which term describes this pattern?
+
+A) Positive association
+B) Negative association
+C) No evident association
+D) Perfect association
+
+::: note
+Invented survey.
+:::
+
+## Q4 · Answer {.answer}
+
+**B. Negative association.**
+
+As one variable increases, the other tends to decrease. More screen time goes with less sleep. "Tends to" matters: some students have a lot of screen time and still sleep well. The association is not perfect.
+
+::: note
+IMS 1.2.3 · [Cheat sheet: negative association](../cheat-sheet.qmd#negative-association)
+:::
+
+## Q5 · The headline {.question}
+
+A student newspaper prints the same scatterplot under the headline:
+
+> **"Phones ruin your sleep!"**
+
+What is the best response?
+
+A) Correct. The plot shows that phones cause less sleep.
+B) Too strong. The plot shows an association, not a cause.
+C) Wrong. A negative association means that phones improve sleep.
+D) Wrong. A class survey can never show any pattern.
+
+## Q5 · Answer {.answer}
+
+**B. Too strong. The plot shows an association, not a cause.**
+
+Other variables can be involved. Exam stress can cause both more scrolling at night and less sleep. A side job with late shifts can do the same. To show a cause, you need a suitable study design, typically an experiment.
+
+::: note
+IMS 1.2.3 · [Cheat sheet: relationships between variables](../cheat-sheet.qmd#relationships-between-variables)
+:::
+
+## Q6 · Duolingo streaks {.question}
+
+Your Spanish teacher asks:
+
+> Do students with a longer Duolingo streak get a higher score in the final exam?
+
+Which variable is the **response variable**?
+
+A) The length of the streak
+B) The exam score
+C) The language
+D) The student
+
+## Q6 · Answer {.answer}
+
+**B. The exam score.**
+
+The question asks if the streak can explain or predict the score. The streak is the explanatory variable. The exam score is the response variable. The student is not a variable: each student is one observation.
+
+::: note
+IMS 1.2.4 · [Cheat sheet: explanatory and response variables](../cheat-sheet.qmd#explanatory-and-response-variables)
+:::
+
+## Q7 · The story poll {.question}
+
+You post a poll in your Instagram story: _"Should the canteen serve more vegan dishes?"_ 300 followers vote. 78% vote yes.
+
+You want to know what **all students at your school** think. Which statement is correct?
+
+A) The 300 voters are the population.
+B) The 300 voters are a sample. All students at the school are the population.
+C) The 300 voters are a census, because 300 is a lot.
+D) The 78% describes all students, because everyone can see your story.
+
+::: note
+Invented numbers.
+:::
+
+## Q7 · Answer {.answer}
+
+**B. The 300 voters are a sample. All students at the school are the population.**
+
+The population is the group that the conclusion is about. The sample is the group that was actually measured. Also: your followers are not a random choice of students. People who care about vegan food are more likely to vote. Ask: _Who was measured, and who is the conclusion about?_
+
+::: note
+IMS 2.1.1 · [Cheat sheet: population and sample](../cheat-sheet.qmd#population-and-sample)
+:::
+
+## Q8 · Two million ratings {.question}
+
+A popular app has **4.8 stars from 2 million ratings** in the app store.
+
+What does this number tell you?
+
+A) It is a census of all users, because 2 million is so large.
+B) It describes users who chose to rate. They are a self-selected sample.
+C) It proves that the app is good for everyone.
+D) Nothing at all, because 2 million is too small a sample.
+
+::: note
+Invented numbers.
+:::
+
+## Q8 · Answer {.answer}
+
+**B. It describes users who chose to rate. They are a self-selected sample.**
+
+A census measures every case in the population. Most users never rate an app. Users who uninstalled it early often never rate it either. A large sample does not fix a selection problem. It only makes the biased result look precise.
+
+::: note
+IMS 2.1.1 · [Cheat sheet: census](../cheat-sheet.qmd#census)
+:::
+
+## Q9 · iPhone or Android? {.question}
+
+Two study programmes report which phone their students use:
+
+| Programme   | iPhone | Android | Total |
+| ----------- | -----: | ------: | ----: |
+| Design      |     30 |      10 |    40 |
+| Engineering |     60 |      60 |   120 |
+
+Which statement is correct?
+
+A) Engineering has the higher share of iPhone users, because it has more iPhone users.
+B) Design has the higher share of iPhone users: 75% against 50%.
+C) Both programmes have the same share of iPhone users.
+D) You cannot compare the programmes, because their sizes differ.
+
+::: note
+Invented numbers.
+:::
+
+## Q9 · Answer {.answer}
+
+**B. Design has the higher share of iPhone users: 75% against 50%.**
+
+Engineering has more iPhone users, 60 against 30. But it also has three times as many students. Divide each row by its own total: 30 / 40 = 75% and 60 / 120 = 50%. When the group sizes differ, compare proportions, not only counts.
+
+::: note
+IMS 4.1 · [Cheat sheet: contingency table](../cheat-sheet.qmd#contingency-table)
+:::
+
+## Q10 · The streaming poll {.question}
+
+Your class votes for a favourite streaming service: Netflix 26, Disney+ 22, Prime Video 21. A bar chart shows the result. Its y-axis starts at 20. The Netflix bar looks six times as long as the Prime Video bar.
+
+What is the problem?
+
+A) The data needs a histogram, not a bar chart.
+B) The bars must be sorted alphabetically.
+C) The axis does not start at zero, so the bar lengths exaggerate the difference.
+D) There is no problem: the counts are correct.
+
+::: note
+Invented numbers.
+:::
+
+## Q10 · Answer {.answer}
+
+**C. The axis does not start at zero, so the bar lengths exaggerate the difference.**
+
+In a bar plot, readers compare the length of the bars. From an axis at 20, the bars are 6, 2, and 1 long. From zero, they are 26, 22, and 21 long. The real difference is small. A histogram is wrong here: the variable is categorical.
+
+::: note
+IMS 4.1 · [Cheat sheet: good bar-chart practice](../cheat-sheet.qmd#good-bar-chart-practice)
+:::
+
+## Q11 · The running club {.question}
+
+A running club exports data from Strava. A scatterplot shows _kilometres per week_ (x) and _10 km race time in minutes_ (y). The points fall close to a straight line that goes down. One runner sits far above the line: 60 km per week, but 70 minutes.
+
+Which description is correct?
+
+A) Positive, linear, strong, no unusual observations.
+B) Negative, roughly linear, fairly strong, one unusual observation.
+C) Negative. The slow runner is an error, so delete that point.
+D) The plot proves that more kilometres make every runner faster.
+
+::: note
+Invented data.
+:::
+
+## Q11 · Answer {.answer}
+
+**B. Negative, roughly linear, fairly strong, one unusual observation.**
+
+Read a scatterplot with four questions: direction, form, strength, and unusual observations. Do not silently delete the slow runner. The point can be an injury, a trail race, or an entry error. Investigate it. A plot alone shows an association, not proof.
+
+::: note
+IMS 5.1 · [Cheat sheet: read a scatterplot using four questions](../cheat-sheet.qmd#read-a-scatterplot-using-four-questions)
+:::
+
+## Q12 · Screen time in the group chat {.question}
+
+Five friends compare their daily TikTok time in hours:
+
+**1, 2, 2, 3, 12**
+
+What is the **mean**?
+
+A) 2 hours
+B) 3 hours
+C) 4 hours
+D) 12 hours
+
+::: note
+Invented numbers.
+:::
+
+## Q12 · Answer {.answer}
+
+**C. 4 hours.**
+
+Add the values and divide by the number of observations: (1 + 2 + 2 + 3 + 12) / 5 = 20 / 5 = 4. Four of the five friends are below the mean. One heavy user pulls the mean up. The median, 2 hours, describes the typical friend better.
+
+::: note
+IMS 5.2 · [Cheat sheet: mean](../cheat-sheet.qmd#mean)
+:::
+
+## Q13 · Follower counts {.question}
+
+Your class makes a histogram of Instagram follower counts. Most students have between 100 and 800 followers. Three students have more than 20,000. The bars on the left are tall. A long, thin tail goes to the right.
+
+What shape does the distribution have?
+
+A) Left-skewed, because most observations are on the left
+B) Symmetric
+C) Right-skewed
+D) It has no shape, because three students are outliers
+
+::: note
+Invented data.
+:::
+
+## Q13 · Answer {.answer}
+
+**C. Right-skewed.**
+
+Name the skew from the tail, not from the peak. The long tail points to the higher values, so the distribution is right-skewed. Option A is the most common trap. In a right-skewed distribution, the mean is pulled into the tail and lies above the median.
+
+::: note
+IMS 5.3 · [Cheat sheet: shape: symmetric vs. skewed](../cheat-sheet.qmd#shape-symmetric-vs.-skewed)
+:::
+
+## Q14 · Delivery times {.question}
+
+A box plot shows the delivery times of a food delivery app in minutes:
+
+| Q~1~ | Median | Q~3~ |
+| ---: | -----: | ---: |
+|   20 |     25 |   35 |
+
+About what share of the deliveries took **between 20 and 35 minutes**?
+
+A) 25%
+B) 50%
+C) 75%
+D) You cannot tell from a box plot.
+
+::: note
+Invented numbers.
+:::
+
+## Q14 · Answer {.answer}
+
+**B. 50%.**
+
+The box runs from Q~1~ to Q~3~. About 25% of the observations lie below Q~1~ and about 25% lie above Q~3~. The box holds the middle 50%. Its width is the interquartile range: IQR = 35 − 20 = 15 minutes.
+
+::: note
+IMS 5.5 · [Cheat sheet: box plots, quartiles, and the median](../cheat-sheet.qmd#box-plots-quartiles-and-the-median)
+:::
+
+## From statistics back to Day 1
+
+The quiz uses formal language: observations, variables, samples, and distributions.
+
+Before we can analyze observations and variables, someone must decide what counts as an observation and a variable.
+
+- Who decided what one row in your Spotify file means?
+- Who decided which students the story poll reached?
+- Which data setting produced the dataset that you brought to class?
+
+Next: [Session 8 — Models of local practice I](../sessions/08-models-of-local-practice-i.qmd)

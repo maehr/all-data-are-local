@@ -13,6 +13,8 @@ subtitle: 'Day 2 · 60 minutes'
 
 Day 2 starts with a short multiple-choice quiz on the required IMS sections. The quiz checks observations, variables, variable types, population and sample, bar plots, scatterplots, mean, histograms, median, quartiles, and box plots.
 
+We go through the [quiz slides](../slides/07-statistics-quiz.qmd) together. Each question starts with a case from everyday life. The next slide gives the answer and the reason.
+
 We correct the quiz together. We then connect the formal statistical language to Day 1: before we can analyze observations and variables, someone must decide what counts as an observation and a variable.
 
 ## Prepare
