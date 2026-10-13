@@ -17,4 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Add textbook section links and improve pagination in the statistics cheat sheet ([#9](https://github.com/maehr/all-data-are-local/issues/9)).
+
 ### Security

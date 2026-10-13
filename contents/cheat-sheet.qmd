@@ -11,15 +11,19 @@ date: 2026-10-05
 date-format: long
 license: CC BY 4.0
 toc-depth: 2
+filters:
+  - ../src/cheat-sheet-layout.lua
 format:
   html: default
   typst:
+    citeproc: true
     mainfont: IBM Plex Sans
     monofont: IBM Plex Mono
     papersize: a4
+    fontsize: 10pt
     margin:
-      x: 2cm
-      y: 2cm
+      x: 1.7cm
+      y: 1.7cm
     # The neutral Mermaid theme keeps the diagrams greyscale in print. Quarto
     # styles them from CSS variables in HTML, which the rasteriser cannot read.
     mermaid:
@@ -27,10 +31,16 @@ format:
     # Quarto rasterises Mermaid at its natural pixel size and writes that width
     # into the Typst source. Two of the five diagrams are wider than an A4
     # column and run off the page. Shrink any image that does not fit, and
-    # leave the rest alone. The matplotlib figures carry no explicit width, so
-    # Typst already fits them to the text measure.
+    # leave the rest alone. The layout filter sets a fixed print width for
+    # matplotlib figures.
     include-in-header:
       - text: |
+          // Compact print spacing; keep headings attached to their content.
+          #set par(leading: 0.55em, spacing: 0.65em)
+          #show heading: set block(above: 1em, below: 0.55em, sticky: true)
+          #show figure: set block(above: 0.65em, below: 0.65em)
+          #set table(inset: 3pt)
+          #show math.equation: set block(above: 0.4em, below: 0.4em)
           #show image: it => layout(size => {
             if it.width != auto and it.width > size.width {
               let f = size.width / it.width * 100%
@@ -87,6 +97,9 @@ plt.rcParams.update(
 )
 ```
 
+This sheet follows the assigned sections of *Introduction to Modern Statistics (2e)* (IMS) [@cetinkayarundel2024ims].
+The textbook links below work online and in the PDF.
+
 ::: {.callout-tip title="The big idea"}
 **Start with the data, not the chart.**
 
@@ -101,7 +114,13 @@ Before visualizing anything, ask:
 
 # 1. Data basics
 
+:::: {.keep-together}
+
 ## Observations, variables, and data frames
+
+::: {.ims-reference}
+**Textbook:** [IMS § 1.2.1](https://openintrostat.github.io/ims/data-hello.html#observations-variables-and-data-matrices).
+:::
 
 Most datasets can be imagined as a table:
 
@@ -126,6 +145,10 @@ A useful question is:
 
 If you cannot answer that clearly, you probably do not yet understand the dataset.
 
+::::
+
+:::: {.keep-together}
+
 ### Tidy data
 
 A common structure is **tidy data**:
@@ -142,9 +165,17 @@ A spreadsheet that *looks* neat to a human is not necessarily tidy data.
 For example, using separate columns for `Monday`, `Tuesday`, `Wednesday`, etc. may encode values in column names instead of storing **day** as a variable.
 :::
 
+::::
+
 ---
 
+:::: {.keep-together}
+
 ## Types of variables
+
+::: {.ims-reference}
+**Textbook:** [IMS § 1.2.2](https://openintrostat.github.io/ims/data-hello.html#sec-variable-types).
+:::
 
 The most important split is:
 
@@ -157,6 +188,10 @@ flowchart TD
     C --> F["Discrete<br/>countable values"]
     C --> G["Continuous<br/>measured on a continuum"]
 ```
+
+::::
+
+:::: {.keep-together}
 
 ### Numerical variables
 
@@ -196,6 +231,10 @@ Examples:
 
 Measurements may be rounded, but the underlying quantity is continuous.
 
+::::
+
+:::: {.keep-together}
+
 ### Categorical variables
 
 Values represent groups or labels.
@@ -217,6 +256,10 @@ Ask:
 
 If not, treat the variable as categorical.
 :::
+
+::::
+
+:::: {.keep-together}
 
 ### Nominal vs. ordinal
 
@@ -240,9 +283,17 @@ does not necessarily represent the same change as
 
 `good → excellent`.
 
+::::
+
 ---
 
+:::: {.keep-together}
+
 ## Relationships between variables
+
+::: {.ims-reference}
+**Textbook:** [IMS § 1.2.3](https://openintrostat.github.io/ims/data-hello.html#sec-variable-relations).
+:::
 
 Often the goal is not to describe one variable but to ask whether **two variables are related**.
 
@@ -284,9 +335,17 @@ There might be:
 A plot can show an **association**. Establishing causality requires an appropriate study design, typically an experiment.
 :::
 
+::::
+
 ---
 
+:::: {.keep-together}
+
 ## Explanatory and response variables
+
+::: {.ims-reference}
+**Textbook:** [IMS § 1.2.4](https://openintrostat.github.io/ims/data-hello.html#explanatory-and-response-variables).
+:::
 
 When the research question suggests that one variable may explain or predict another:
 
@@ -306,7 +365,15 @@ In a scatterplot, the convention is usually:
 
 But assigning these labels does **not** prove causality.
 
+::::
+
 # 2. Population and sample
+
+::: {.ims-reference}
+**Textbook:** [IMS § 2.1.1](https://openintrostat.github.io/ims/data-design.html#populations-and-samples).
+:::
+
+:::: {.keep-together}
 
 ## Population
 
@@ -319,6 +386,10 @@ Example research question:
 Possible population:
 
 > All visitors to the exhibition during its entire run.
+
+::::
+
+:::: {.keep-together}
 
 ## Sample
 
@@ -334,6 +405,10 @@ flowchart TD
     B -->|data analysis| C["Description of the sample"]
     C -->|cautious inference| A
 ```
+
+::::
+
+:::: {.keep-together}
 
 ## Census
 
@@ -356,9 +431,17 @@ When reading a statistic, ask:
 > **Who was actually measured, and who is the conclusion supposed to describe?**
 :::
 
+::::
+
 ---
 
 # 3. Categorical data: contingency tables & bar plots
+
+::: {.ims-reference}
+**Textbook:** [IMS § 4.1](https://openintrostat.github.io/ims/explore-categorical.html#contingency-tables-and-bar-plots).
+:::
+
+:::: {.keep-together}
 
 ## Contingency table
 
@@ -401,7 +484,11 @@ When the group sizes differ, compare proportions within each group. Mobile shows
 
 A contingency table gives the raw material for studying relationships between categorical variables.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Bar plot
 
@@ -444,7 +531,15 @@ plt.show()
 - Use counts when the absolute number matters.
 - Use proportions when the share of observations matters.
 
+::::
+
+:::: {.keep-together}
+
 # 4. Scatterplots for paired data
+
+::: {.ims-reference}
+**Textbook:** [IMS § 5.1](https://openintrostat.github.io/ims/explore-numerical.html#sec-scatterplots).
+:::
 
 Use a **scatterplot** when you have **two numerical variables measured on the same observations**.
 
@@ -471,7 +566,11 @@ fig.tight_layout()
 plt.show()
 ```
 
+::::
+
 ## Read a scatterplot using four questions
+
+:::: {.keep-together}
 
 ### 1. Direction
 
@@ -480,6 +579,10 @@ Does $y$ generally:
 - increase as $x$ increases? → **positive**
 - decrease as $x$ increases? → **negative**
 - show no clear direction?
+
+::::
+
+:::: {.keep-together}
 
 ### 2. Form
 
@@ -491,6 +594,10 @@ Is the relationship:
 - something more complicated?
 
 Do not assume every relationship should be a straight line.
+
+::::
+
+:::: {.keep-together}
 
 ### 3. Strength
 
@@ -516,6 +623,10 @@ fig.tight_layout()
 plt.show()
 ```
 
+::::
+
+:::: {.keep-together}
+
 ### 4. Unusual observations
 
 Look for points far from the main pattern.
@@ -535,11 +646,23 @@ Even a beautiful, strong relationship only establishes an **association** from t
 It does not establish that changing $x$ will cause $y$ to change.
 :::
 
+::::
+
+:::: {.keep-together}
+
 ### Sentence template
 
 > As **[x]** increases, **[y]** tends to **[increase/decrease]**. The relationship appears **[roughly linear/nonlinear]**, with **[little/substantial]** scatter and **[no/some]** unusual observations.
 
+::::
+
 # 5. Dot plots and the mean
+
+::: {.ims-reference}
+**Textbook:** [IMS § 5.2](https://openintrostat.github.io/ims/explore-numerical.html#sec-dotplots).
+:::
+
+:::: {.keep-together}
 
 ## Dot plot
 
@@ -575,7 +698,11 @@ plt.show()
 
 For large datasets, histograms are usually more readable.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Mean
 
@@ -623,7 +750,11 @@ $$
 
 Average reading time = **11 seconds**.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Think of the mean as a balancing point
 
@@ -656,7 +787,11 @@ plt.show()
 
 Values far away from the center contribute strongly to where this balancing point lies.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Sample mean vs. population mean
 
@@ -691,7 +826,11 @@ flowchart BT
     A["Sample mean x̄"] -->|estimates| B["Population mean μ"]
 ```
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Why means are useful
 
@@ -711,7 +850,11 @@ $$
 
 This makes comparisons easier.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Weighted means
 
@@ -748,7 +891,15 @@ Do not give groups equal weight when the groups contain very different numbers o
 Ask what each number being averaged actually represents.
 :::
 
+::::
+
+:::: {.keep-together}
+
 # 6. Histograms and distribution shape
+
+::: {.ims-reference}
+**Textbook:** [IMS § 5.3](https://openintrostat.github.io/ims/explore-numerical.html#sec-histograms).
+:::
 
 Use a **histogram** to display the distribution of **one numerical variable**, especially when there are too many observations for a dot plot.
 
@@ -781,6 +932,10 @@ plt.show()
 Nobody measured the bins. Someone chose them. A different choice tells a different story about the same observations.
 :::
 
+::::
+
+:::: {.keep-together}
+
 ## What a histogram preserves
 
 It helps reveal:
@@ -793,13 +948,21 @@ It helps reveal:
 - approximate spread;
 - unusual regions or gaps.
 
+::::
+
+:::: {.keep-together}
+
 ## What it hides
 
 Because observations are grouped into bins, you cannot usually recover the exact individual values.
 
 A histogram is therefore a **summary of the distribution**, not a case-by-case display.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Shape: symmetric vs. skewed
 
@@ -853,7 +1016,11 @@ It means the **long tail points right**.
 Likewise, left-skewed = long tail to the left.
 :::
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Modes
 
@@ -881,7 +1048,15 @@ Example:
 
 > The distribution of **[variable]** is **[unimodal/bimodal/multimodal]** and **[symmetric/right-skewed/left-skewed]**, with most observations around **[region]** and **[any unusual features]**.
 
+::::
+
 # 7. Box plots, quartiles, and the median
+
+::: {.ims-reference}
+**Textbook:** [IMS § 5.5](https://openintrostat.github.io/ims/explore-numerical.html#sec-boxplots).
+:::
+
+:::: {.keep-together}
 
 ## Median
 
@@ -918,7 +1093,11 @@ $$
 
 The median is also the **50th percentile**. It splits the ordered observations into a lower half and an upper half.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Quartiles
 
@@ -943,7 +1122,11 @@ Approximately:
 - 25% between median and $Q_3$
 - 25% above $Q_3$
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Interquartile range
 
@@ -957,7 +1140,11 @@ Large IQR → middle half of observations are spread widely.
 
 Small IQR → middle half are relatively concentrated.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Reading a box plot
 
@@ -1013,7 +1200,11 @@ The line inside the box is the **median**.
 
 Each whisker reaches the most extreme observation that still lies within 1.5 × IQR of the box. Observations beyond those fences are drawn individually as potential outliers.
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Potential outliers: the 1.5 × IQR rule
 
@@ -1042,7 +1233,11 @@ A point beyond an outlier fence may be:
 Investigate it before deciding what to do.
 :::
 
+::::
+
 ---
+
+:::: {.keep-together}
 
 ## Compare groups with side-by-side box plots
 
@@ -1086,6 +1281,10 @@ Read it by comparing the medians, then the boxes, then the whiskers and the outl
 
 A grouped dot plot works as well when each group holds few observations, because it still shows the individual values.
 
+::::
+
+:::: {.keep-together}
+
 # Bar plot vs. histogram
 
 These are easy to confuse.
@@ -1098,6 +1297,10 @@ These are easy to confuse.
 | Order | Can often be rearranged | Must follow numerical order |
 | Gaps | Usually separated | Usually adjacent |
 | Main question | How common is each category? | What is the shape of the distribution? |
+
+::::
+
+:::: {.keep-together}
 
 # Which display should I use?
 
@@ -1136,6 +1339,10 @@ For example:
 - Does viewing time differ by device type?
 - Does completion time differ across task categories?
 
+::::
+
+:::: {.keep-together}
+
 # Fast interpretation checklist
 
 When you see a visualization, ask:
@@ -1150,6 +1357,10 @@ When you see a visualization, ask:
 8. **What is the shape?**
 9. **Are there clusters, gaps, or unusual observations?**
 10. **Is the chart showing association, or is someone claiming causation?**
+
+::::
+
+:::: {.keep-together .formula-summary}
 
 # Five formulas, symbols, and definitions worth remembering
 
@@ -1187,6 +1398,10 @@ $$
 \boxed{Q_3+1.5IQR}
 $$
 
+::::
+
+:::: {.keep-together}
+
 # One-minute summary
 
 | Situation | Main idea |
@@ -1219,3 +1434,5 @@ A visualization is not merely decoration applied after analysis.
 
 Choosing between a bar plot, histogram, scatterplot, or box plot is part of the **reasoning**: each graphic answers a different kind of question and preserves or hides different features of the data.
 :::
+
+::::
