@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update the npm dev dependencies, the Python dependencies, and the GitHub Actions.
+
 ### Deprecated
 
 ### Removed
