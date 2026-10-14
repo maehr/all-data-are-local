@@ -19,6 +19,7 @@ The course content lives in `contents/`. The other directories follow the advanc
 | --------------------- | -------------------------------------------------- |
 | `contents/`           | Course pages: description, syllabus, and resources |
 | `contents/sessions/`  | One page for each of the 12 sessions               |
+| `contents/slides/`    | Reveal.js slide decks                              |
 | `references.bib`      | BibTeX entries for every cited work                |
 | `documentation/`      | Guidance for teachers who reuse the course         |
 | `assets/`             | Images and media                                   |
@@ -29,6 +30,14 @@ The course content lives in `contents/`. The other directories follow the advanc
 | `project-management/` | Planning notes and minutes                         |
 
 Put new files in the directory that matches their purpose.
+
+### Slide Decks
+
+- Put every reveal.js deck in `contents/slides/`.
+- `npm run site:build` renders the site with `--to html`. The flag keeps the cheat sheet PDF out of CI.
+- The flag also forces each deck to HTML. A second pass renders `contents/slides/` with `--to revealjs`.
+- A deck in another directory gets no second pass. Production then shows it as a normal page.
+- `npm run preview` renders each deck as reveal.js. Only the production build needs the second pass.
 
 ## 3. Course Content Rules
 
@@ -157,6 +166,7 @@ This repository contains no R code. Do not add an R toolchain, an `renv` lockfil
 | `npm run changelog:unreleased`            | Preview the pending changelog entries           |
 | `npm run changelog`                       | Generate the changelog from the commits         |
 | `npm run prepare`                         | Install the Prek Git hooks                      |
+| `npm run site:build`                      | Production build. Avoid it in agent sessions.   |
 | `npm run release:prepare -- --tag vX.Y.Z` | Build and stage a Zenodo-ready site archive     |
 | `uv sync`                                 | Sync the Python dependencies                    |
 | `quarto render`                           | Production render. Avoid it in agent sessions.  |

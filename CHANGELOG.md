@@ -11,12 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update the npm dev dependencies, the Python dependencies, and the GitHub Actions.
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
+- Render the slide decks in `contents/slides/` as reveal.js in the production build.
 - Add textbook section links and improve pagination in the statistics cheat sheet ([#9](https://github.com/maehr/all-data-are-local/issues/9)).
 
 ### Security

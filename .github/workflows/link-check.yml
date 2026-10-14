@@ -16,18 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6.0.3
+        uses: actions/checkout@v7.0.1
 
       - name: Restore lychee cache
         id: restore-cache
-        uses: actions/cache/restore@v5.0.5
+        uses: actions/cache/restore@v6.1.0
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.ref }}-${{ hashFiles('.lycheerc.toml') }}
           restore-keys: cache-lychee-${{ github.ref }}-
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v2.8.0
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: --config .lycheerc.toml --root-dir ${{ github.workspace }} './*.md' './*.qmd' './contents/**/*.qmd' './documentation/**/*.md' './documentation/**/*.qmd'
           fail: true
@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Save lychee cache
-        uses: actions/cache/save@v5.0.5
+        uses: actions/cache/save@v6.1.0
         if: always()
         with:
           path: .lycheecache
